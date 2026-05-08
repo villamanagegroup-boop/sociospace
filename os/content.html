@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Content · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+<style>
+  .lib-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 14px;
+  }
+  .asset {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .asset .thumb {
+    aspect-ratio: 9/16;
+    background: linear-gradient(135deg, var(--pink-soft) 0%, var(--yellow-soft) 100%);
+    display: grid;
+    place-items: center;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    position: relative;
+  }
+  .asset .thumb.b { background: linear-gradient(135deg, var(--mint-soft) 0%, var(--lilac-soft) 100%); }
+  .asset .thumb.c { background: linear-gradient(135deg, var(--orange-soft) 0%, var(--peach) 100%); }
+  .asset .thumb.d { background: linear-gradient(135deg, var(--lilac-soft) 0%, var(--mint-soft) 100%); }
+  .asset .thumb .play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(22,22,22,0.0);
+    transition: background 0.18s;
+    font-size: 1.6rem;
+    color: var(--ink);
+  }
+  .asset:hover .thumb .play { background: rgba(22,22,22,0.12); }
+  .asset .meta {
+    padding: 10px 12px;
+  }
+  .asset .ttl {
+    font-weight: 600;
+    font-size: 0.86rem;
+    margin-bottom: 4px;
+  }
+  .asset .sub {
+    font-size: 0.74rem;
+    color: var(--ink-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html" class="active"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Content Library</h1>
+      <span class="crumbs">· UGC archive</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search assets…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Content Library</h2>
+          <p>Delivered UGC, hooks, and cutdowns. Tag, share with brands, or archive.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Bulk tag</button>
+          <button class="btn btn-pink">+ Upload</button>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="multi">
+        <span class="label">Filter</span>
+        <button class="filter-chip on">All</button>
+        <button class="filter-chip">Approved</button>
+        <button class="filter-chip">In review</button>
+        <button class="filter-chip">Whitelisted</button>
+        <button class="filter-chip">Archived</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Creator, brand, hashtag…" />
+      </div>
+
+      <div class="lib-grid">
+        <div class="asset">
+          <div class="thumb">M<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Maya · Apex hero hook</div>
+            <div class="sub"><span>0:24 · v3</span><span class="pill active" style="font-size:0.64rem">Approved</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb b">J<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Jordan · Vital review</div>
+            <div class="sub"><span>0:38 · v1</span><span class="pill active" style="font-size:0.64rem">Approved</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb c">S<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Simi · Bloom hydration</div>
+            <div class="sub"><span>0:31 · v2</span><span class="pill review" style="font-size:0.64rem">Review</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb d">A<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Alex · Native unbox</div>
+            <div class="sub"><span>0:18 · v1</span><span class="pill review" style="font-size:0.64rem">Review</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb b">D<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Devi · Fenty get-ready</div>
+            <div class="sub"><span>0:42 · v4</span><span class="pill paid" style="font-size:0.64rem">Whitelisted</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb">M<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Maya · Apex POV cutdown</div>
+            <div class="sub"><span>0:22 · v1</span><span class="pill review" style="font-size:0.64rem">Review</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb c">T<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Tasha · Live replay clip</div>
+            <div class="sub"><span>1:02 · v1</span><span class="pill draft" style="font-size:0.64rem">Draft</span></div>
+          </div>
+        </div>
+        <div class="asset">
+          <div class="thumb d">K<div class="play">▶</div></div>
+          <div class="meta">
+            <div class="ttl">Kai · Native day-in-life</div>
+            <div class="sub"><span>0:46 · v2</span><span class="pill active" style="font-size:0.64rem">Approved</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

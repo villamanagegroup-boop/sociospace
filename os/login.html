@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="login-shell">
+  <a href="../index.html" class="login-back"><span class="arrow">←</span> Back to site</a>
+
+  <div class="login-deco">
+    <span class="star" style="top: 12%; left: 14%; font-size: 1.8rem; transform: rotate(-12deg);">✦</span>
+    <span class="star" style="top: 22%; right: 18%; font-size: 1.2rem; transform: rotate(20deg);">★</span>
+    <span class="star" style="bottom: 16%; left: 22%; font-size: 1.5rem; transform: rotate(8deg);">✦</span>
+    <span class="star" style="bottom: 26%; right: 12%; font-size: 1rem; transform: rotate(-22deg);">★</span>
+  </div>
+
+  <div class="login-card-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="../images/logo.png" alt="Socio Space" />
+        <div class="nm">Socio Space<small>Internal OS</small></div>
+      </div>
+
+      <h2>Welcome back.</h2>
+      <p class="sub">Sign in to your operations workspace.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="username" placeholder="you@sociospace.studio" />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+        </div>
+
+        <div id="login-msg" style="font-size: 0.78rem; min-height: 18px; margin: -6px 0 12px;"></div>
+
+        <button type="submit" class="btn btn-primary signin">Sign in</button>
+      </form>
+
+      <div class="login-divider">new here?</div>
+
+      <a href="signup.html" class="btn signup-cta">Create studio account →</a>
+
+      <div class="login-divider">or</div>
+
+      <button id="admin-bypass" class="btn bypass" type="button">
+        Admin bypass <small>· skip into live workspace</small>
+      </button>
+
+      <div class="login-foot">
+        Trouble signing in? <a href="../contact.html?topic=bug">Report it</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

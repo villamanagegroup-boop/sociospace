@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create studio · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="login-shell">
+  <a href="../index.html" class="login-back"><span class="arrow">←</span> Back to site</a>
+
+  <div class="login-deco">
+    <span class="star" style="top: 14%; left: 18%; font-size: 1.6rem; transform: rotate(-8deg);">✦</span>
+    <span class="star" style="top: 18%; right: 14%; font-size: 1.4rem; transform: rotate(16deg);">★</span>
+    <span class="star" style="bottom: 18%; left: 18%; font-size: 1.3rem; transform: rotate(12deg);">✦</span>
+    <span class="star" style="bottom: 24%; right: 16%; font-size: 1.1rem; transform: rotate(-18deg);">★</span>
+  </div>
+
+  <div class="login-card-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="../images/logo.png" alt="Socio Space" />
+        <div class="nm">Socio Space<small>Internal OS</small></div>
+      </div>
+
+      <h2>Create your studio.</h2>
+      <p class="sub">Set up your workspace, then pick a plan that fits.</p>
+
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="studio">Studio name</label>
+          <input id="studio" name="studio" type="text" placeholder="e.g. Hicks Talent Studio" />
+        </div>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="First &amp; last" />
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
+          <div class="hint" style="font-size:0.74rem; color:var(--ink-4); margin-top:4px;">Use 8+ characters with a mix of letters and numbers.</div>
+        </div>
+
+        <div id="signup-msg" style="font-size: 0.78rem; min-height: 18px; margin: -2px 0 12px;"></div>
+
+        <button type="submit" class="btn btn-primary signin">Continue to plan selection →</button>
+      </form>
+
+      <div class="login-divider">already have an account?</div>
+
+      <a href="login.html" class="btn bypass" style="background:transparent; color:var(--ink); border-color:var(--ink);">Sign in instead</a>
+
+      <div class="login-foot">
+        By creating an account you agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

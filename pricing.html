@@ -24,6 +24,7 @@
       <li><a href="features.html">For Creators</a></li>
       <li><a href="brands.html">For Brands</a></li>
       <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="demo.html">Try Demo</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Book a Campaign</a></li>
     </ul>
@@ -408,10 +409,85 @@
     <div class="foot-bottom">
       <div class="credit">© 2026 <span class="c-y">Socio Space Studios</span> · Built by <a href="https://www.stackdstudiosai.com" target="_blank" rel="noopener">Stackd Studios AI</a></div>
       <div class="credit">Based in the <span class="c-m">USA</span> · <span class="c-p">info@sociospacestudios.com</span></div>
+      <a href="os/login.html" class="foot-login">Studio Sign-in <span class="arrow">→</span></a>
     </div>
   </div>
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ============ Signup → Pricing handoff ============
+  (function () {
+    const params  = new URLSearchParams(location.search);
+    const fromSig = params.get('from') === 'signup';
+    let pending = null;
+    try { pending = JSON.parse(localStorage.getItem('os_pending_signup') || 'null'); }
+    catch (_) {}
+
+    if (fromSig && pending) {
+      // Welcome banner above hero
+      const banner = document.createElement('div');
+      banner.className = 'signup-welcome';
+      banner.innerHTML =
+        '<div class="signup-welcome-inner">' +
+          '<span class="badge">Step 2 of 2</span>' +
+          '<div class="msg"><strong>Welcome, ' + escapeHtml(pending.name.split(/\s+/)[0]) + '.</strong> ' +
+            'Pick the plan that fits <em>' + escapeHtml(pending.studio) + '</em> and we\'ll set up your workspace.</div>' +
+          '<a href="os/login.html" class="back">Save for later</a>' +
+        '</div>';
+      const hero = document.querySelector('.page-hero');
+      if (hero) hero.parentNode.insertBefore(banner, hero);
+      else document.body.insertBefore(banner, document.body.firstChild);
+    }
+
+    // Wire plan CTAs to OS handoff when the user came from signup
+    function activateWorkspace(planName) {
+      let info = pending;
+      // Allow direct visitors to also pick a plan if they're already signed up
+      if (!info) {
+        try { info = JSON.parse(localStorage.getItem('os_workspace') || 'null'); }
+        catch (_) {}
+      }
+      if (!info) {
+        // No signup yet — send them to signup first
+        location.href = 'os/signup.html';
+        return;
+      }
+      const ws = {
+        studio: info.studio,
+        name: info.name,
+        email: info.email,
+        plan: planName
+      };
+      localStorage.setItem('os_workspace', JSON.stringify(ws));
+      localStorage.setItem('os_authed', '1');
+      localStorage.setItem('os_mode', 'workspace');
+      localStorage.removeItem('os_admin_bypass');
+      localStorage.removeItem('os_pending_signup');
+      location.href = 'os/index.html';
+    }
+
+    if (fromSig) {
+      document.querySelectorAll('.plan-cta, .mini-cta').forEach(function (cta) {
+        cta.addEventListener('click', function (e) {
+          e.preventDefault();
+          const plan = (cta.closest('.plan') || cta.closest('tr'));
+          let planName = 'Studio';
+          if (plan) {
+            const h = plan.querySelector('h3') || plan.querySelector('.plan-name') || plan.querySelector('td:first-child');
+            if (h) planName = h.textContent.trim();
+          }
+          activateWorkspace(planName);
+        });
+      });
+    }
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+  })();
+</script>
 </body>
 </html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campaigns · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html" class="active"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Campaigns</h1>
+      <span class="crumbs">· Pipeline</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search campaigns…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Pipeline</h2>
+          <p>Drag deals between stages. Each card represents one creator × one brand on one campaign.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Table view</button>
+          <button class="btn btn-pink">+ New deal</button>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="single">
+        <span class="label">View</span>
+        <button class="filter-chip on">All deals</button>
+        <button class="filter-chip">My deals</button>
+        <button class="filter-chip">This month</button>
+        <button class="filter-chip">High value ($2k+)</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Brand, creator, campaign…" />
+      </div>
+
+      <div class="kanban">
+        <div class="kan-col">
+          <div class="kan-col-head">
+            <h4>Pitched</h4>
+            <span class="count">3</span>
+            <button class="add" type="button">+</button>
+          </div>
+          <div class="kan-card">
+            <div class="b">Bloom &amp; Co. × Maya R.</div>
+            <span class="tag beauty">Beauty</span>
+            <div class="meta"><span>Pitched 8m ago</span><span class="amt">$3,200</span></div>
+          </div>
+          <div class="kan-card">
+            <div class="b">Topicals × Devi P.</div>
+            <span class="tag beauty">Beauty</span>
+            <div class="meta"><span>Pitched 3d ago</span><span class="amt">$1,400</span></div>
+          </div>
+          <div class="kan-card">
+            <div class="b">Native × Alex T.</div>
+            <span class="tag lifestyle">Lifestyle</span>
+            <div class="meta"><span>Pitched 5d ago</span><span class="amt">$950</span></div>
+          </div>
+        </div>
+
+        <div class="kan-col">
+          <div class="kan-col-head">
+            <h4>Negotiating</h4>
+            <span class="count">2</span>
+            <button class="add" type="button">+</button>
+          </div>
+          <div class="kan-card">
+            <div class="b">Apex Home × Maya R.</div>
+            <span class="tag lifestyle">Lifestyle</span>
+            <div class="meta"><span>3 videos · Jun 12</span><span class="amt">$1,800</span></div>
+          </div>
+          <div class="kan-card">
+            <div class="b">Olive &amp; Twine × Simi O.</div>
+            <span class="tag fashion">Fashion</span>
+            <div class="meta"><span>2 reels · Jun 18</span><span class="amt">$1,600</span></div>
+          </div>
+        </div>
+
+        <div class="kan-col">
+          <div class="kan-col-head">
+            <h4>Signed</h4>
+            <span class="count">2</span>
+            <button class="add" type="button">+</button>
+          </div>
+          <div class="kan-card">
+            <div class="b">Vital Proteins × Jordan K.</div>
+            <span class="tag tech">Tech-lifestyle</span>
+            <div class="meta"><span>TikTok Live · Jun 18</span><span class="amt">$2,400</span></div>
+          </div>
+          <div class="kan-card">
+            <div class="b">Vital Proteins × Tasha B.</div>
+            <span class="tag food">Food</span>
+            <div class="meta"><span>UGC + Live · Jun 22</span><span class="amt">$3,000</span></div>
+          </div>
+        </div>
+
+        <div class="kan-col">
+          <div class="kan-col-head">
+            <h4>Delivered</h4>
+            <span class="count">1</span>
+            <button class="add" type="button">+</button>
+          </div>
+          <div class="kan-card">
+            <div class="b">Bloom &amp; Co. × Simi O.</div>
+            <span class="tag beauty">Beauty</span>
+            <div class="meta"><span>4 videos · awaiting QA</span><span class="amt">$1,400</span></div>
+          </div>
+        </div>
+
+        <div class="kan-col">
+          <div class="kan-col-head">
+            <h4>Paid</h4>
+            <span class="count">2</span>
+            <button class="add" type="button">+</button>
+          </div>
+          <div class="kan-card">
+            <div class="b">Fenty Skin × Devi P.</div>
+            <span class="tag beauty">Beauty</span>
+            <div class="meta"><span>Paid May 28</span><span class="amt">$2,100</span></div>
+          </div>
+          <div class="kan-card">
+            <div class="b">Native × Kai M.</div>
+            <span class="tag fitness">Fitness</span>
+            <div class="meta"><span>Paid May 24</span><span class="amt">$900</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

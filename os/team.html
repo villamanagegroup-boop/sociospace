@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Team · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html" class="active"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Team</h1>
+      <span class="crumbs">· Members &amp; roles</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search members…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Team</h2>
+          <p>Studio members, role-based permissions, and pending invites.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Manage roles</button>
+          <button class="btn btn-pink">+ Invite member</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Members</h3>
+          <span class="meta">3 active · 1 pending</span>
+        </div>
+        <table class="os-table">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Role</th>
+              <th>Last active</th>
+              <th>Status</th>
+              <th style="text-align:right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av">SS</div>
+                  <div class="nm">Studio Owner<small>owner@sociospace.studio</small></div>
+                </div>
+              </td>
+              <td><span class="tag" style="background:var(--ink); color:#fff; border-color:var(--ink)">Owner</span></td>
+              <td>Just now</td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Edit</button></div></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av pk">EM</div>
+                  <div class="nm">Eli Mendez<small>eli@sociospace.studio</small></div>
+                </div>
+              </td>
+              <td><span class="tag fashion">Talent Manager</span></td>
+              <td>14m ago</td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Edit</button></div></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av or">RC</div>
+                  <div class="nm">Rae Carter<small>rae@sociospace.studio</small></div>
+                </div>
+              </td>
+              <td><span class="tag food">Brand Partnerships</span></td>
+              <td>2h ago</td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Edit</button></div></td>
+            </tr>
+            <tr style="opacity:0.7">
+              <td>
+                <div class="who">
+                  <div class="av lc">MD</div>
+                  <div class="nm">Marco Diaz<small>marco.d@protonmail.com</small></div>
+                </div>
+              </td>
+              <td><span class="tag fashion">Talent Manager</span></td>
+              <td>—</td>
+              <td><span class="pill pending">Invited</span></td>
+              <td><div class="row-actions">
+                <button class="btn btn-ghost btn-sm">Resend</button>
+                <button class="btn btn-ghost btn-sm">Cancel</button>
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="height: 18px;"></div>
+
+      <div class="os-grid cols-2">
+        <div class="panel">
+          <div class="panel-head"><h3>Role Permissions</h3></div>
+          <div class="panel-body">
+            <div class="feed-item">
+              <div class="body">
+                <strong>Owner</strong> · full access
+                <small style="display:block; color:var(--ink-4); margin-top:2px;">Billing, team, settings, all financial data.</small>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="body">
+                <strong>Talent Manager</strong>
+                <small style="display:block; color:var(--ink-4); margin-top:2px;">Roster, applications, bookings, contracts. No financial admin.</small>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="body">
+                <strong>Brand Partnerships</strong>
+                <small style="display:block; color:var(--ink-4); margin-top:2px;">Clients, campaigns, contracts, inbox. No payouts.</small>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="body">
+                <strong>Read-only</strong>
+                <small style="display:block; color:var(--ink-4); margin-top:2px;">Dashboard + analytics only. Useful for advisors.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Activity</h3></div>
+          <div class="panel-body">
+            <div class="feed-item">
+              <span class="dot"></span>
+              <div class="body"><strong>Eli Mendez</strong> approved Riley S.'s application.</div>
+              <span class="when">14m</span>
+            </div>
+            <div class="feed-item pink">
+              <span class="dot"></span>
+              <div class="body"><strong>Rae Carter</strong> sent contract to Vital Proteins.</div>
+              <span class="when">3h</span>
+            </div>
+            <div class="feed-item yellow">
+              <span class="dot"></span>
+              <div class="body"><strong>Studio Owner</strong> invited Marco Diaz as Talent Manager.</div>
+              <span class="when">1d</span>
+            </div>
+            <div class="feed-item">
+              <span class="dot"></span>
+              <div class="body"><strong>Eli Mendez</strong> updated Maya R.'s rate card.</div>
+              <span class="when">2d</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

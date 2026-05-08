@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bookings · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html" class="active"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Bookings</h1>
+      <span class="crumbs">· Schedule</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search bookings…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>June 2026</h2>
+          <p>Live shows, shoot days, and delivery deadlines across the roster.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">‹ Prev</button>
+          <button class="btn btn-ghost">Today</button>
+          <button class="btn btn-ghost">Next ›</button>
+          <button class="btn btn-pink">+ New booking</button>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="multi">
+        <span class="label">Type</span>
+        <button class="filter-chip on">All</button>
+        <button class="filter-chip">TikTok Live</button>
+        <button class="filter-chip">Shoot day</button>
+        <button class="filter-chip">Deadline</button>
+        <button class="filter-chip">Discovery call</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Filter by creator or client…" />
+      </div>
+
+      <div class="cal">
+        <div class="cal-head">Sun</div>
+        <div class="cal-head">Mon</div>
+        <div class="cal-head">Tue</div>
+        <div class="cal-head">Wed</div>
+        <div class="cal-head">Thu</div>
+        <div class="cal-head">Fri</div>
+        <div class="cal-head">Sat</div>
+
+        <!-- Week 1 -->
+        <div class="cal-cell dim"><div class="d">31</div></div>
+        <div class="cal-cell"><div class="d">1</div></div>
+        <div class="cal-cell"><div class="d">2</div>
+          <span class="cal-event live">3pm Live · Tasha</span>
+        </div>
+        <div class="cal-cell"><div class="d">3</div>
+          <span class="cal-event shoot">10am Shoot · Maya</span>
+        </div>
+        <div class="cal-cell"><div class="d">4</div>
+          <span class="cal-event live">7pm Live · Jordan</span>
+        </div>
+        <div class="cal-cell"><div class="d">5</div>
+          <span class="cal-event deadline">Devi · Fenty due</span>
+        </div>
+        <div class="cal-cell"><div class="d">6</div></div>
+
+        <!-- Week 2 -->
+        <div class="cal-cell"><div class="d">7</div></div>
+        <div class="cal-cell today"><div class="d">8</div>
+          <span class="cal-event">Bloom kickoff call</span>
+        </div>
+        <div class="cal-cell"><div class="d">9</div>
+          <span class="cal-event shoot">Simi shoot · Bloom</span>
+        </div>
+        <div class="cal-cell"><div class="d">10</div></div>
+        <div class="cal-cell"><div class="d">11</div>
+          <span class="cal-event deadline">Apex script due</span>
+        </div>
+        <div class="cal-cell"><div class="d">12</div>
+          <span class="cal-event deadline">Maya · Apex due</span>
+        </div>
+        <div class="cal-cell"><div class="d">13</div></div>
+
+        <!-- Week 3 -->
+        <div class="cal-cell"><div class="d">14</div></div>
+        <div class="cal-cell"><div class="d">15</div>
+          <span class="cal-event">Bloom brief sent</span>
+        </div>
+        <div class="cal-cell"><div class="d">16</div></div>
+        <div class="cal-cell"><div class="d">17</div>
+          <span class="cal-event live">8pm Live · Devi</span>
+        </div>
+        <div class="cal-cell"><div class="d">18</div>
+          <span class="cal-event live">3pm Live · Jordan · Vital</span>
+        </div>
+        <div class="cal-cell"><div class="d">19</div></div>
+        <div class="cal-cell"><div class="d">20</div></div>
+
+        <!-- Week 4 -->
+        <div class="cal-cell"><div class="d">21</div></div>
+        <div class="cal-cell"><div class="d">22</div>
+          <span class="cal-event live">2pm Live · Tasha · Vital</span>
+          <span class="cal-event shoot">Alex shoot day</span>
+        </div>
+        <div class="cal-cell"><div class="d">23</div></div>
+        <div class="cal-cell"><div class="d">24</div>
+          <span class="cal-event deadline">Vital deliverables</span>
+        </div>
+        <div class="cal-cell"><div class="d">25</div></div>
+        <div class="cal-cell"><div class="d">26</div></div>
+        <div class="cal-cell"><div class="d">27</div></div>
+
+        <!-- Week 5 -->
+        <div class="cal-cell"><div class="d">28</div></div>
+        <div class="cal-cell"><div class="d">29</div></div>
+        <div class="cal-cell"><div class="d">30</div>
+          <span class="cal-event">Q3 planning</span>
+        </div>
+        <div class="cal-cell dim"><div class="d">1</div></div>
+        <div class="cal-cell dim"><div class="d">2</div></div>
+        <div class="cal-cell dim"><div class="d">3</div></div>
+        <div class="cal-cell dim"><div class="d">4</div></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clients · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html" class="active"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Clients</h1>
+      <span class="crumbs">· Brands &amp; partners</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search clients…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Clients</h2>
+          <p>Brand contacts, account history, and lifetime spend.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Import</button>
+          <button class="btn btn-pink">+ Add client</button>
+        </div>
+      </div>
+
+      <div class="os-stats" style="margin-bottom: 18px;">
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch"></span>Total Clients</div>
+          <div class="num">23</div>
+          <div class="delta">11 active this quarter</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch mint"></span>Lifetime Revenue</div>
+          <div class="num">$284k</div>
+          <div class="delta">All clients, all time</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch pink"></span>New This Month</div>
+          <div class="num">3</div>
+          <div class="delta">2 inbound, 1 referral</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch orange"></span>At Risk</div>
+          <div class="num">2</div>
+          <div class="delta">No activity 60+ days</div>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="single">
+        <span class="label">Status</span>
+        <button class="filter-chip on">All</button>
+        <button class="filter-chip">Active</button>
+        <button class="filter-chip">Onboarding</button>
+        <button class="filter-chip">At risk</button>
+        <button class="filter-chip">Churned</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Search company or contact…" />
+      </div>
+
+      <div class="panel">
+        <table class="os-table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Primary Contact</th>
+              <th>Active Deals</th>
+              <th>Last Activity</th>
+              <th>Lifetime Spend</th>
+              <th>Status</th>
+              <th style="text-align:right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Apex Home Goods</strong><br><small style="color:var(--ink-4)">Home · DTC</small></td>
+              <td>Jess M.<br><small style="color:var(--ink-4)">jess@apexhome.co</small></td>
+              <td>2</td>
+              <td>2h ago</td>
+              <td><strong>$24,800</strong></td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Bloom &amp; Co.</strong><br><small style="color:var(--ink-4)">Beauty · DTC</small></td>
+              <td>Jess B.<br><small style="color:var(--ink-4)">jess@bloomco.com</small></td>
+              <td>1</td>
+              <td>8m ago</td>
+              <td><strong>$0</strong></td>
+              <td><span class="pill new">New</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Vital Proteins</strong><br><small style="color:var(--ink-4)">Wellness</small></td>
+              <td>Carla R.<br><small style="color:var(--ink-4)">partnerships@vitalproteins.com</small></td>
+              <td>3</td>
+              <td>1d ago</td>
+              <td><strong>$58,400</strong></td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Native</strong><br><small style="color:var(--ink-4)">Personal care</small></td>
+              <td>Eli K.<br><small style="color:var(--ink-4)">eli@nativecos.com</small></td>
+              <td>1</td>
+              <td>3d ago</td>
+              <td><strong>$12,200</strong></td>
+              <td><span class="pill active">Active</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Topicals</strong><br><small style="color:var(--ink-4)">Skincare</small></td>
+              <td>Dani O.<br><small style="color:var(--ink-4)">brand@topicals.com</small></td>
+              <td>0</td>
+              <td>3d ago</td>
+              <td><strong>$0</strong></td>
+              <td><span class="pill new">New</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Olive &amp; Twine</strong><br><small style="color:var(--ink-4)">Home · DTC</small></td>
+              <td>Mara P.<br><small style="color:var(--ink-4)">mara@olivetwine.com</small></td>
+              <td>0</td>
+              <td>67 days ago</td>
+              <td><strong>$8,100</strong></td>
+              <td><span class="pill pending">At risk</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Quartz Studio</strong><br><small style="color:var(--ink-4)">Apparel</small></td>
+              <td>Iris D.<br><small style="color:var(--ink-4)">iris@quartz.studio</small></td>
+              <td>0</td>
+              <td>112 days ago</td>
+              <td><strong>$3,400</strong></td>
+              <td><span class="pill closed">Churned</span></td>
+              <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Open</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Settings · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html" class="active"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Settings</h1>
+      <span class="crumbs">· Workspace</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search settings…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Settings</h2>
+          <p>Studio profile, integrations, billing, and security.</p>
+        </div>
+      </div>
+
+      <div class="settings-layout">
+
+        <aside class="settings-side">
+          <a href="#studio" class="active">Studio profile</a>
+          <a href="#account">Account</a>
+          <a href="#notifications">Notifications</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#billing">Billing</a>
+          <a href="#security">Security</a>
+          <a href="#data">Data &amp; export</a>
+          <a href="#danger" style="color:var(--error)">Danger zone</a>
+        </aside>
+
+        <div>
+
+          <section id="studio" class="settings-section">
+            <h3>Studio profile</h3>
+            <p>This is what brands see when they receive contracts and invoices.</p>
+            <form class="os-form">
+              <div class="field">
+                <label>Studio name</label>
+                <input type="text" value="Socio Space Studios" />
+              </div>
+              <div class="field">
+                <label>Public contact email</label>
+                <input type="email" value="hello@sociospace.studio" />
+              </div>
+              <div class="field">
+                <label>Billing address</label>
+                <textarea rows="3">Socio Space Studios LLC
+123 Studio Way
+Brooklyn, NY 11201</textarea>
+              </div>
+              <button class="btn btn-primary" type="button">Save changes</button>
+            </form>
+          </section>
+
+          <section id="account" class="settings-section">
+            <h3>Account</h3>
+            <p>Personal info for your owner login.</p>
+            <form class="os-form">
+              <div class="field">
+                <label>Full name</label>
+                <input type="text" value="Studio Owner" />
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" value="owner@sociospace.studio" />
+              </div>
+              <button class="btn btn-primary" type="button">Update profile</button>
+            </form>
+          </section>
+
+          <section id="notifications" class="settings-section">
+            <h3>Notifications</h3>
+            <p>What we'll ping you about over email and in-app.</p>
+            <div style="display:grid; gap:8px; max-width:520px;">
+              <label style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius-sm);">
+                <input type="checkbox" checked /> New brand inquiry hits inbox
+              </label>
+              <label style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius-sm);">
+                <input type="checkbox" checked /> New creator application
+              </label>
+              <label style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius-sm);">
+                <input type="checkbox" checked /> Contract signed by either party
+              </label>
+              <label style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius-sm);">
+                <input type="checkbox" /> Daily digest at 8am
+              </label>
+              <label style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius-sm);">
+                <input type="checkbox" checked /> Payout failed or returned
+              </label>
+            </div>
+          </section>
+
+          <section id="integrations" class="settings-section">
+            <h3>Integrations</h3>
+            <p>Connect external tools. None of these are wired up yet — these will be real connectors later.</p>
+            <div class="os-grid cols-3" style="gap:12px;">
+              <div class="panel"><div class="panel-body padded"><strong>Stripe</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Brand invoicing &amp; ACH payouts.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+              <div class="panel"><div class="panel-body padded"><strong>Resend</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Transactional email from your domain.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+              <div class="panel"><div class="panel-body padded"><strong>Google Calendar</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Sync TikTok Live + shoot bookings.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+              <div class="panel"><div class="panel-body padded"><strong>Slack</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Push inbox + activity to a channel.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+              <div class="panel"><div class="panel-body padded"><strong>Dropbox Sign</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Send contracts for e-signature.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+              <div class="panel"><div class="panel-body padded"><strong>QuickBooks</strong><p style="margin:4px 0 10px; color:var(--ink-4); font-size:0.78rem;">Sync invoices &amp; bookkeeping.</p><button class="btn btn-ghost btn-sm">Connect</button></div></div>
+            </div>
+          </section>
+
+          <section id="billing" class="settings-section">
+            <h3>Billing</h3>
+            <p>Studio subscription &amp; payment method.</p>
+            <div class="panel" style="max-width:520px">
+              <div class="panel-body padded">
+                <div style="display:flex; align-items:center; gap:14px;">
+                  <div style="font-family:var(--font-display); font-size:1.1rem;">Studio · $79/mo</div>
+                  <span class="pill active" style="margin-left:auto">Active</span>
+                </div>
+                <div style="font-size:0.8rem; color:var(--ink-4); margin-top:4px;">Renews on the 14th · •••• 4242</div>
+                <div style="display:flex; gap:8px; margin-top:14px;">
+                  <button class="btn btn-ghost btn-sm">Update card</button>
+                  <button class="btn btn-ghost btn-sm">Change plan</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="security" class="settings-section">
+            <h3>Security</h3>
+            <p>Two-factor and active sessions.</p>
+            <form class="os-form">
+              <div class="field">
+                <label>Current password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <div class="field">
+                <label>New password</label>
+                <input type="password" placeholder="••••••••" />
+              </div>
+              <button class="btn btn-primary" type="button">Update password</button>
+            </form>
+            <div style="margin-top:16px;">
+              <strong style="font-size:0.86rem;">Two-factor authentication</strong>
+              <p style="color:var(--ink-4); font-size:0.8rem; margin:4px 0 10px;">Currently disabled.</p>
+              <button class="btn btn-yellow btn-sm">Enable 2FA</button>
+            </div>
+          </section>
+
+          <section id="data" class="settings-section">
+            <h3>Data &amp; export</h3>
+            <p>Download your studio data anytime.</p>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-ghost btn-sm">Export creators (CSV)</button>
+              <button class="btn btn-ghost btn-sm">Export campaigns (CSV)</button>
+              <button class="btn btn-ghost btn-sm">Export everything (.zip)</button>
+            </div>
+          </section>
+
+          <section id="danger" class="settings-section">
+            <h3 style="color:var(--error)">Danger zone</h3>
+            <p>Irreversible actions.</p>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-ghost btn-sm" style="border-color:var(--error); color:var(--error)">Archive studio</button>
+              <button class="btn btn-ghost btn-sm" style="border-color:var(--error); color:var(--error)">Delete account</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>

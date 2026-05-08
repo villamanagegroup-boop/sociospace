@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Creators · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html" class="active"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+      <button class="signout" data-signout type="button">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Creators</h1>
+      <span class="crumbs">· Roster</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search creators…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+      </div>
+    </header>
+
+    <div class="os-admin-banner" style="display:none">
+      <strong>Admin Bypass</strong> Auth gate is disabled.
+      <button data-exit-admin type="button">Exit admin mode</button>
+    </div>
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Roster</h2>
+          <p>Active creators on the Socio Space roster — manage profiles, rates, niches, and availability.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Public roster page ↗</button>
+          <button class="btn btn-pink">+ Add creator</button>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="multi">
+        <span class="label">Niche</span>
+        <button class="filter-chip on">All</button>
+        <button class="filter-chip">Beauty</button>
+        <button class="filter-chip">Food</button>
+        <button class="filter-chip">Fashion</button>
+        <button class="filter-chip">Fitness</button>
+        <button class="filter-chip">Lifestyle</button>
+        <button class="filter-chip">Tech</button>
+        <button class="filter-chip">Finance</button>
+        <button class="filter-chip">Parenting</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Filter by name or handle…" />
+      </div>
+
+      <div class="creator-grid">
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av">M</div>
+            <div>
+              <h4>Maya R.<small>@mayarcreates · NYC</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag beauty">Beauty</span><span class="tag lifestyle">Lifestyle</span></div>
+          <div class="stats">
+            <div><div class="v">132k</div><div class="l">Followers</div></div>
+            <div><div class="v">6.2%</div><div class="l">Engage</div></div>
+            <div><div class="v">$1.8k</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--orange-soft)">J</div>
+            <div>
+              <h4>Jordan K.<small>@jordankplays · Brooklyn</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag tech">Tech</span><span class="tag lifestyle">Lifestyle</span></div>
+          <div class="stats">
+            <div><div class="v">240k</div><div class="l">Followers</div></div>
+            <div><div class="v">5.1%</div><div class="l">Engage</div></div>
+            <div><div class="v">$2.4k</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--lilac-soft)">A</div>
+            <div>
+              <h4>Alex T.<small>@alexteats · Austin</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag food">Food</span></div>
+          <div class="stats">
+            <div><div class="v">87k</div><div class="l">Followers</div></div>
+            <div><div class="v">7.8%</div><div class="l">Engage</div></div>
+            <div><div class="v">$1.1k</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--yellow-soft)">S</div>
+            <div>
+              <h4>Simi O.<small>@simiblooms · Atlanta</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag beauty">Beauty</span><span class="tag fashion">Fashion</span></div>
+          <div class="stats">
+            <div><div class="v">198k</div><div class="l">Followers</div></div>
+            <div><div class="v">5.6%</div><div class="l">Engage</div></div>
+            <div><div class="v">$2.0k</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--mint-soft)">D</div>
+            <div>
+              <h4>Devi P.<small>@devipdaily · Houston</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag fitness">Fitness</span><span class="tag lifestyle">Lifestyle</span></div>
+          <div class="stats">
+            <div><div class="v">156k</div><div class="l">Followers</div></div>
+            <div><div class="v">6.9%</div><div class="l">Engage</div></div>
+            <div><div class="v">$1.6k</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--peach)">R</div>
+            <div>
+              <h4>Riley S.<small>@rileythreads · NYC</small></h4>
+            </div>
+            <span class="pill pending" style="margin-left:auto">Onboarding</span>
+          </div>
+          <div><span class="tag fashion">Fashion</span></div>
+          <div class="stats">
+            <div><div class="v">92k</div><div class="l">Followers</div></div>
+            <div><div class="v">5.8%</div><div class="l">Engage</div></div>
+            <div><div class="v">—</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-yellow btn-sm">Finish setup</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--pink-soft)">N</div>
+            <div>
+              <h4>Nia C.<small>@niacstudios · Houston</small></h4>
+            </div>
+            <span class="pill review" style="margin-left:auto">Hold</span>
+          </div>
+          <div><span class="tag beauty">Beauty</span></div>
+          <div class="stats">
+            <div><div class="v">22k</div><div class="l">Followers</div></div>
+            <div><div class="v">8.4%</div><div class="l">Engage</div></div>
+            <div><div class="v">$650</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Reactivate</button>
+          </div>
+        </div>
+
+        <div class="creator-tile">
+          <div class="head">
+            <div class="av" style="background:var(--lilac-soft)">K</div>
+            <div>
+              <h4>Kai M.<small>@kaimoves · Miami</small></h4>
+            </div>
+            <span class="pill active" style="margin-left:auto">Active</span>
+          </div>
+          <div><span class="tag fitness">Fitness</span></div>
+          <div class="stats">
+            <div><div class="v">78k</div><div class="l">Followers</div></div>
+            <div><div class="v">3.9%</div><div class="l">Engage</div></div>
+            <div><div class="v">$900</div><div class="l">Avg deal</div></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost btn-sm">Profile</button>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="os.js"></script>
+</body>
+</html>
