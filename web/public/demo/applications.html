@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Applications · Socio Space OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../os/os.css" />
+</head>
+<body>
+
+<div class="os-shell">
+
+  <aside class="os-side">
+    <div class="os-side-head">
+      <img src="../images/logo.png" alt="Socio Space" />
+      <div class="brand">Socio Space<small>Studios OS</small></div>
+    </div>
+    <nav class="os-nav">
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Operations</div>
+        <a href="index.html"><span class="ico">◇</span>Dashboard</a>
+        <a href="inbox.html"><span class="ico">✉</span>Inbox<span class="badge">12</span></a>
+        <a href="applications.html" class="active"><span class="ico">⌗</span>Applications<span class="badge">5</span></a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Roster</div>
+        <a href="creators.html"><span class="ico">★</span>Creators</a>
+        <a href="clients.html"><span class="ico">▣</span>Clients</a>
+        <a href="campaigns.html"><span class="ico">◎</span>Campaigns</a>
+        <a href="bookings.html"><span class="ico">◷</span>Bookings</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Finance</div>
+        <a href="contracts.html"><span class="ico">§</span>Contracts</a>
+        <a href="payments.html"><span class="ico">$</span>Payments</a>
+        <a href="content.html"><span class="ico">▶</span>Content</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Insights</div>
+        <a href="analytics.html"><span class="ico">⌁</span>Analytics</a>
+      </div>
+      <div class="os-nav-group">
+        <div class="os-nav-group-label">Workspace</div>
+        <a href="team.html"><span class="ico">◉</span>Team</a>
+        <a href="settings.html"><span class="ico">⚙</span>Settings</a>
+      </div>
+    </nav>
+    <div class="os-side-foot">
+      <div class="os-avatar">SS</div>
+      <div class="who">Studio Owner<small>owner@sociospace.studio</small></div>
+    </div>
+  </aside>
+
+  <main class="os-main">
+    <header class="os-top">
+      <button class="os-menu-toggle" type="button">≡</button>
+      <h1>Applications</h1>
+      <span class="crumbs">· Creator pipeline</span>
+      <div class="os-top-search">
+        <span class="icon">⌕</span>
+        <input type="search" placeholder="Search applicants…" />
+      </div>
+      <div class="os-top-actions">
+        <button class="os-icon-btn">⌘<span class="dot"></span></button>
+        <button class="os-icon-btn">?</button>
+        <button class="os-signout-btn" data-signout type="button">Sign out</button>
+      </div>
+    </header>
+
+
+    <div class="os-body">
+      <div class="os-page-head">
+        <div>
+          <h2>Creator Applications</h2>
+          <p>Review incoming applications from <code>/apply</code>. Approve to add them to the roster, or pass with a note.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost">Export CSV</button>
+          <button class="btn btn-primary">Refresh</button>
+        </div>
+      </div>
+
+      <div class="os-stats" style="margin-bottom: 18px;">
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch pink"></span>New</div>
+          <div class="num">2</div>
+          <div class="delta">Submitted in last 24h</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch"></span>In Review</div>
+          <div class="num">3</div>
+          <div class="delta">Awaiting decision</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch mint"></span>Approved · MTD</div>
+          <div class="num">4</div>
+          <div class="delta">Added to roster this month</div>
+        </div>
+        <div class="stat-tile">
+          <div class="lbl"><span class="swatch orange"></span>Avg Response Time</div>
+          <div class="num">2.1d</div>
+          <div class="delta">Goal: under 3 days</div>
+        </div>
+      </div>
+
+      <div class="os-filters" data-filters="single">
+        <span class="label">Status</span>
+        <button class="filter-chip on">All</button>
+        <button class="filter-chip">New</button>
+        <button class="filter-chip">In review</button>
+        <button class="filter-chip">Approved</button>
+        <button class="filter-chip">Declined</button>
+        <span class="spacer"></span>
+        <input class="search-inline" type="search" placeholder="Filter by handle, niche…" />
+      </div>
+
+      <div class="panel">
+        <table class="os-table">
+          <thead>
+            <tr>
+              <th>Applicant</th>
+              <th>Niche</th>
+              <th>Following</th>
+              <th>Avg Engagement</th>
+              <th>Submitted</th>
+              <th>Status</th>
+              <th style="text-align:right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av pk">R</div>
+                  <div class="nm">Riley <small>@rileythreads · NYC</small></div>
+                </div>
+              </td>
+              <td><span class="tag fashion">Fashion</span></td>
+              <td>92.4k</td>
+              <td>5.8%</td>
+              <td>1h ago</td>
+              <td><span class="pill new">New</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View</button>
+                  <button class="btn btn-pink btn-sm">Approve</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av or">T</div>
+                  <div class="nm">Tasha <small>@tashaeats · LA</small></div>
+                </div>
+              </td>
+              <td><span class="tag food">Food</span></td>
+              <td>58.1k</td>
+              <td>7.2%</td>
+              <td>6h ago</td>
+              <td><span class="pill new">New</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View</button>
+                  <button class="btn btn-pink btn-sm">Approve</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av lc">D</div>
+                  <div class="nm">Devon <small>@devonpdotcom · Atlanta</small></div>
+                </div>
+              </td>
+              <td><span class="tag fashion">Fashion</span></td>
+              <td>134k</td>
+              <td>4.4%</td>
+              <td>1d ago</td>
+              <td><span class="pill review">In review</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View</button>
+                  <button class="btn btn-pink btn-sm">Approve</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av yw">J</div>
+                  <div class="nm">Jules <small>@julesonmoney · Chicago</small></div>
+                </div>
+              </td>
+              <td><span class="tag finance">Finance</span></td>
+              <td>41.7k</td>
+              <td>6.1%</td>
+              <td>2d ago</td>
+              <td><span class="pill review">In review</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View</button>
+                  <button class="btn btn-pink btn-sm">Approve</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="who">
+                  <div class="av">N</div>
+                  <div class="nm">Nia <small>@niacstudios · Houston</small></div>
+                </div>
+              </td>
+              <td><span class="tag beauty">Beauty</span></td>
+              <td>22.3k</td>
+              <td>8.4%</td>
+              <td>3d ago</td>
+              <td><span class="pill review">In review</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View</button>
+                  <button class="btn btn-pink btn-sm">Approve</button>
+                </div>
+              </td>
+            </tr>
+            <tr style="opacity:0.7">
+              <td>
+                <div class="who">
+                  <div class="av">K</div>
+                  <div class="nm">Kai <small>@kaimoves · Miami</small></div>
+                </div>
+              </td>
+              <td><span class="tag fitness">Fitness</span></td>
+              <td>78.5k</td>
+              <td>3.9%</td>
+              <td>1w ago</td>
+              <td><span class="pill active">Approved</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View profile</button>
+                </div>
+              </td>
+            </tr>
+            <tr style="opacity:0.6">
+              <td>
+                <div class="who">
+                  <div class="av">B</div>
+                  <div class="nm">Brett A. <small>@brettposts · Online</small></div>
+                </div>
+              </td>
+              <td><span class="tag lifestyle">Lifestyle</span></td>
+              <td>4.2k</td>
+              <td>1.2%</td>
+              <td>1w ago</td>
+              <td><span class="pill declined">Declined</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="btn btn-ghost btn-sm">View notes</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="demo.js"></script>
+</body>
+</html>

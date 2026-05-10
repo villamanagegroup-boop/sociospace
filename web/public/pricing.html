@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing — Socio Space Studios</title>
+<meta name="description" content="Pick your plan. Creators join free or upgrade to Pro for the full deal pipeline. Brands browse free, $99/mo Pro for contact unlocks and job posts, $199/mo Pro+ for unlimited." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  /* Audience toggle for the dual creator/brand pricing page */
+  .audience-toggle {
+    display: inline-flex;
+    background: var(--cream-2, #FFF1C8);
+    border: 2.5px solid var(--ink, #161616);
+    border-radius: 999px;
+    padding: 5px;
+    gap: 4px;
+    box-shadow: 4px 4px 0 var(--ink, #161616);
+  }
+  .audience-toggle button {
+    background: transparent;
+    border: 0;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-family: var(--font-display, 'Archivo Black'), sans-serif;
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    color: var(--ink-3, #5A5A5A);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .audience-toggle button.on {
+    background: var(--ink, #161616);
+    color: var(--cream, #FFF7DE);
+  }
+  [data-pricing-pane] { transition: opacity 0.2s ease; }
+  [data-pricing-pane][hidden] { display: none; }
+</style>
+</head>
+
+<body>
+
+<nav class="site">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Socio Space Studios home">
+      <img src="images/logo.png" alt="Socio Space Studios" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">For Creators</a></li>
+      <li><a href="brands.html">For Brands</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="demo.html">Try Demo</a></li>
+      <li><a href="/login">Sign In</a></li>
+      <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Contact Us</a></li>
+    </ul>
+    <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Contact Us</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <span class="star-deco" style="top: 20%; left: 6%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(-15deg);">✦</span>
+  <span class="star-deco" style="top: 30%; right: 8%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(20deg);">★</span>
+
+  <span class="doodle bob" style="top: 12%; left: 12%; --r: -10deg;">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FCD735"/>
+      <text x="22" y="30" font-family="Archivo Black" font-size="11" fill="#161616">$</text>
+      <text x="34" y="30" font-family="Archivo Black" font-size="11" fill="#161616">$</text>
+      <path d="M20 38 Q 30 46, 40 38" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <span class="doodle" style="top: 14%; right: 14%; transform: rotate(15deg);">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="#FF7BA8">
+      <path d="M12 21s-7-4.5-9.5-9.5C0.5 7 4 3 8 3c2 0 3 1 4 2 1-1 2-2 4-2 4 0 7.5 4 5.5 8.5C19 16.5 12 21 12 21z" stroke="#161616" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap page-hero-inner">
+    <div class="crumbs fade-up">
+      <a href="index.html">Home</a><span class="sep">/</span><span>Pricing</span>
+    </div>
+    <h1 class="fade-up delay-1">Pick Your <span style="color: var(--pink-bright);">Plan.</span></h1>
+    <p class="lede fade-up delay-2">Creators join the roster free. Brands browse free, pay to connect. Pick your side below.</p>
+
+    <div class="fade-up delay-2" style="margin-top: 26px;">
+      <div class="audience-toggle" role="tablist" aria-label="Pricing audience">
+        <button type="button" data-audience="creator" class="on" role="tab" aria-selected="true">For Creators</button>
+        <button type="button" data-audience="brand" role="tab" aria-selected="false">For Brands</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CREATOR PANE
+     ============================================================ -->
+<div data-pricing-pane="creator">
+
+<!-- wave divider into pink pricing -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 0, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 56 H 0 Z" fill="#FFB8CF"/>
+  </svg>
+</div>
+
+<!-- ============== CREATOR PLANS ============== -->
+<section class="pricing">
+  <span class="star-deco" style="top: 6%; right: 8%; color: var(--ink); font-size: 1.5rem; transform: rotate(15deg);">✦</span>
+  <span class="star-deco" style="bottom: 12%; right: 4%; color: var(--ink); font-size: 1.6rem; transform: rotate(-10deg);">✦</span>
+
+  <svg class="pricing-lb" viewBox="0 0 130 130" fill="none" aria-hidden="true">
+    <path d="M65 22 C 42 22, 30 38, 30 56 C 30 70, 40 78, 48 86 L 48 96 L 82 96 L 82 86 C 90 78, 100 70, 100 56 C 100 38, 88 22, 65 22 Z" fill="#FCD735" stroke="#161616" stroke-width="3"/>
+    <rect x="50" y="98" width="30" height="6" rx="2" fill="#161616"/>
+    <rect x="52" y="106" width="26" height="6" rx="2" fill="#161616"/>
+    <path d="M58 116 L 72 116" stroke="#161616" stroke-width="3" stroke-linecap="round"/>
+    <path d="M65 36 L 65 70 M 56 50 L 65 60 L 74 50" stroke="#7ED957" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <div class="wrap pricing-inner">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">For Creators</span>
+      <h2 class="section-title">Run Your Business Without The Chaos.</h2>
+    </div>
+
+    <div style="text-align:center;" class="fade-up delay-1">
+      <div class="billing-toggle" role="group">
+        <button id="bill-month" class="on">Monthly</button>
+        <button id="bill-year">Annual <span class="save">SAVE 20%</span></button>
+      </div>
+    </div>
+
+    <div class="plans">
+      <div class="plan fade-up delay-1">
+        <h3>Free</h3>
+        <p class="plan-tagline">Get on the Roster.</p>
+        <div class="price">$0 <span class="per">/forever</span></div>
+        <ul class="feats">
+          <li>Public creator profile</li>
+          <li>Listed in the searchable roster</li>
+          <li>Direct messages from brands</li>
+          <li>Basic media kit page</li>
+          <li>1 saved pitch template</li>
+        </ul>
+        <a href="/signup?role=creator" class="plan-cta">Start Free</a>
+      </div>
+
+      <div class="plan featured fade-up delay-2">
+        <span class="doodle" style="top: -78px; left: -64px; z-index: 5;">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none">
+            <text x="6" y="22" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#161616" transform="rotate(-12 6 22)">pick this one!</text>
+            <path d="M50 30 Q 70 40, 86 60" stroke="#161616" stroke-width="2.5" stroke-dasharray="3 4" fill="none" stroke-linecap="round"/>
+            <path d="M82 52 L 86 60 L 78 64" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="plan-tag">★ MOST POPULAR</span>
+        <h3>Creator Pro</h3>
+        <p class="plan-tagline">Run the whole business.</p>
+        <div class="price" data-monthly="$29" data-yearly="$23">
+          $29 <span class="per">/month</span>
+          <span class="annual-note" style="display:none;">Billed $278/year</span>
+        </div>
+        <ul class="feats">
+          <li>Everything in Free</li>
+          <li>Deal pipeline &amp; tracker</li>
+          <li>Unlimited pitch templates</li>
+          <li>Auto-generated media kit PDF</li>
+          <li>Invoice generator + payment tracking</li>
+          <li>Outreach log with follow-ups</li>
+        </ul>
+        <a href="/signup?role=creator" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+
+      <div class="plan fade-up delay-3">
+        <h3>Creator Pro+</h3>
+        <p class="plan-tagline">Scale into a real business.</p>
+        <div class="price" data-monthly="$49" data-yearly="$39">
+          $49 <span class="per">/month</span>
+          <span class="annual-note" style="display:none;">Billed $470/year</span>
+        </div>
+        <ul class="feats">
+          <li>Everything in Creator Pro</li>
+          <li>Profile analytics &amp; view tracking</li>
+          <li>Rate card builder with tiered pricing</li>
+          <li>Priority placement in roster</li>
+          <li>Custom domain for media kit</li>
+          <li>Verified creator badge</li>
+        </ul>
+        <a href="/signup?role=creator" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider out of pink pricing -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 56, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 0 H 0 Z" fill="#FFB8CF"/>
+  </svg>
+</div>
+
+<!-- ============== COMPARISON TABLE ============== -->
+<section class="compare-section">
+  <span class="star-deco" style="top: 8%; left: 6%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(-12deg);">✦</span>
+  <span class="star-deco" style="bottom: 14%; right: 6%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(20deg);">★</span>
+
+  <span class="doodle" style="top: 6%; right: 8%; transform: rotate(8deg);">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#FF7BA8">
+      <path d="M12 21s-7-4.5-9.5-9.5C0.5 7 4 3 8 3c2 0 3 1 4 2 1-1 2-2 4-2 4 0 7.5 4 5.5 8.5C19 16.5 12 21 12 21z" stroke="#161616" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">Compare</span>
+      <h2 class="section-title">Every Feature, Side By Side.</h2>
+    </div>
+
+    <div class="compare-wrap fade-up delay-1">
+      <span class="popular-badge">★ Most Popular</span>
+      <div class="compare-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Free<span class="price-tiny">$0/forever</span></th>
+              <th class="featured">Creator Pro<span class="price-tiny" data-compare-monthly="$29/mo" data-compare-yearly="$23/mo">$29/mo</span></th>
+              <th>Creator Pro+<span class="price-tiny" data-compare-monthly="$49/mo" data-compare-yearly="$39/mo">$49/mo</span></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="section-row sr-pink"><th colspan="4">Profile &amp; Discovery</th></tr>
+            <tr><th>Public creator profile</th><td><span class="yes">✓</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Listed in searchable roster</th><td><span class="yes">✓</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Direct messages from brands</th><td><span class="yes">✓</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Priority placement</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Verified creator badge</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+
+            <tr class="section-row sr-mint"><th colspan="4">Deal Management</th></tr>
+            <tr><th>Deal pipeline tracker</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Deliverable + deadline tracking</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Auto reminders</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Active deals</th><td>1</td><td class="featured"><span class="c-y">Unlimited</span></td><td><span class="c-p">Unlimited</span></td></tr>
+
+            <tr class="section-row sr-orange"><th colspan="4">Pitching &amp; Outreach</th></tr>
+            <tr><th>Saved pitch templates</th><td>1</td><td class="featured"><span class="c-y">Unlimited</span></td><td><span class="c-p">Unlimited</span></td></tr>
+            <tr><th>Outreach log + follow-up reminders</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Auto-generated media kit PDF</th><td>Basic page</td><td class="featured"><span class="c-y">Pro PDF</span></td><td><span class="c-p">Pro PDF + custom domain</span></td></tr>
+
+            <tr class="section-row sr-yellow"><th colspan="4">Money</th></tr>
+            <tr><th>Invoice generator</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Payment status tracking</th><td><span class="no">—</span></td><td class="featured"><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Rate card builder (tiered pricing)</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+
+            <tr class="section-row sr-lilac"><th colspan="4">Analytics</th></tr>
+            <tr><th>Profile view tracking</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Brand search appearance</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><th>Earnings reports</th><td><span class="no">—</span></td><td class="featured">Basic</td><td><span class="c-p">Advanced</span></td></tr>
+
+            <tr class="section-row sr-mint"><th colspan="4">Support</th></tr>
+            <tr><th>Email support</th><td>Standard</td><td class="featured"><span class="c-y">Priority</span></td><td><span class="c-p">Priority</span></td></tr>
+            <tr><th>Onboarding session</th><td><span class="no">—</span></td><td class="featured"><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th>&nbsp;</th>
+              <td><a href="/signup?role=creator" class="mini-cta">Start Free</a></td>
+              <td class="featured"><a href="/signup?role=creator" class="mini-cta">Start Trial</a></td>
+              <td><a href="/signup?role=creator" class="mini-cta">Start Trial</a></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ============================================================
+     END CREATOR PANE
+     ============================================================ -->
+
+
+<!-- ============================================================
+     BRAND PANE
+     ============================================================ -->
+<div data-pricing-pane="brand" hidden>
+
+<!-- wave divider into pink pricing -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 0, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 56 H 0 Z" fill="#FFB8CF"/>
+  </svg>
+</div>
+
+<!-- ============== BRAND PLANS ============== -->
+<section class="pricing">
+  <span class="star-deco" style="top: 6%; right: 8%; color: var(--ink); font-size: 1.5rem; transform: rotate(15deg);">✦</span>
+  <span class="star-deco" style="bottom: 12%; right: 4%; color: var(--ink); font-size: 1.6rem; transform: rotate(-10deg);">✦</span>
+
+  <svg class="pricing-lb" viewBox="0 0 130 130" fill="none" aria-hidden="true">
+    <circle cx="65" cy="65" r="44" fill="#FCD735" stroke="#161616" stroke-width="3"/>
+    <path d="M40 60 Q 65 80, 90 60" stroke="#161616" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="50" cy="55" r="3" fill="#161616"/>
+    <circle cx="80" cy="55" r="3" fill="#161616"/>
+  </svg>
+
+  <div class="wrap pricing-inner">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">For Brands</span>
+      <h2 class="section-title">Browse Free. Pay To Connect.</h2>
+      <p class="section-lede" style="margin-top:10px;">
+        See the full creator roster on us. Upgrade when you're ready to message creators or post jobs.
+      </p>
+    </div>
+
+    <div class="plans">
+      <div class="plan fade-up delay-1">
+        <h3>Free</h3>
+        <p class="plan-tagline">Browse the marketplace.</p>
+        <div class="price">$0 <span class="per">/forever</span></div>
+        <ul class="feats">
+          <li>Browse the full creator roster</li>
+          <li>See niches, rates, portfolio samples</li>
+          <li>Save creators to a private list</li>
+          <li>Handles + contact info hidden</li>
+          <li>0 contact unlocks · 0 job posts</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start Browsing</a>
+      </div>
+
+      <div class="plan featured fade-up delay-2">
+        <span class="doodle" style="top: -78px; left: -64px; z-index: 5;">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none">
+            <text x="6" y="22" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#161616" transform="rotate(-12 6 22)">most brands here</text>
+            <path d="M50 30 Q 70 40, 86 60" stroke="#161616" stroke-width="2.5" stroke-dasharray="3 4" fill="none" stroke-linecap="round"/>
+            <path d="M82 52 L 86 60 L 78 64" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="plan-tag">★ MOST POPULAR</span>
+        <h3>Pro</h3>
+        <p class="plan-tagline">Reach the creators you want.</p>
+        <div class="price">
+          $99 <span class="per">/month</span>
+        </div>
+        <ul class="feats">
+          <li>Everything in Free</li>
+          <li>10 contact unlocks per month</li>
+          <li>3 job posts per month</li>
+          <li>Direct messages with creators</li>
+          <li>Application management</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+
+      <div class="plan fade-up delay-3">
+        <h3>Pro+</h3>
+        <p class="plan-tagline">Run ongoing campaigns.</p>
+        <div class="price">
+          $199 <span class="per">/month</span>
+        </div>
+        <ul class="feats">
+          <li>Everything in Pro</li>
+          <li>Unlimited contact unlocks</li>
+          <li>Unlimited job posts</li>
+          <li>Advanced search + saved filters</li>
+          <li>Priority placement to creators</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider out of pink pricing -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 56, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 0 H 0 Z" fill="#FFB8CF"/>
+  </svg>
+</div>
+
+<!-- ============== BRAND — HOW IT WORKS ============== -->
+<section class="compare-section">
+  <span class="star-deco" style="top: 8%; left: 6%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(-12deg);">✦</span>
+  <span class="star-deco" style="bottom: 14%; right: 6%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(20deg);">★</span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">Self-Serve Or Done-For-You.</h2>
+      <p class="section-lede">
+        Most brands run their own campaigns through the marketplace. When you need help
+        — strategy, scripting, scaled production — our agency steps in.
+      </p>
+    </div>
+
+    <div class="svc-grid" style="margin-top: 40px;">
+      <div class="svc-card fade-up">
+        <div class="svc-icon">🔍</div>
+        <div>
+          <h3>1. Browse</h3>
+          <ul>
+            <li>Filter by niche, platform, rate, content type</li>
+            <li>See portfolio samples and rate cards</li>
+            <li>Save shortlists privately</li>
+            <li>Handles stay hidden until you upgrade</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up delay-1">
+        <div class="svc-icon">🔓</div>
+        <div>
+          <h3>2. Unlock</h3>
+          <ul>
+            <li>Pay monthly for contact unlocks</li>
+            <li>Each unlock reveals the handle + opens DMs</li>
+            <li>Cancel or pause anytime</li>
+            <li>No commission on deals you book direct</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up delay-2">
+        <div class="svc-icon">📋</div>
+        <div>
+          <h3>3. Post Jobs</h3>
+          <ul>
+            <li>Public job board — creators apply to you</li>
+            <li>Manage applications in your dashboard</li>
+            <li>Accept → auto-creates a deal record</li>
+            <li>Pay creators direct, no markup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up delay-3 svc-card-agency">
+        <div class="svc-icon">✨</div>
+        <div>
+          <h3>Need The Whole Thing Run?</h3>
+          <ul>
+            <li>We're a full UGC creator agency too</li>
+            <li>Strategy, casting, scripts, production, paid amplification</li>
+            <li>One contact, one invoice, one team handling it all</li>
+            <li>Marketplace pricing for self-serve · custom quote for managed</li>
+          </ul>
+          <a href="contact.html?topic=brand" class="btn btn-pink" style="margin-top: 14px; display:inline-flex;">
+            Talk to our agency <span class="arrow" style="margin-left:6px;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ============================================================
+     END BRAND PANE
+     ============================================================ -->
+
+<!-- ============== FAQ ============== -->
+<section class="faq-section">
+  <span class="star-deco" style="top: 10%; right: 8%; color: var(--pink-bright); font-size: 1.5rem; transform: rotate(15deg);">✦</span>
+  <span class="star-deco" style="bottom: 14%; left: 6%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(-15deg);">★</span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">Pricing FAQ</span>
+      <h2 class="section-title">Quick Answers.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item fade-up">
+        <summary>Is the Free plan really forever?</summary>
+        <div class="faq-body">Yep. You can stay on Free as long as you want. Most creators upgrade once they have 2+ active brand deals and want a real pipeline + invoices in one place.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>What happens after the 14-day Pro trial?</summary>
+        <div class="faq-body">If you don't add a card, you drop back to Free automatically — no charges, no canceled deals. Your data stays put. Upgrade whenever.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>Do you take a cut of my brand deals?</summary>
+        <div class="faq-body">Not on marketplace deals. When a brand finds you through the roster and books you direct, you keep 100% — they pay their subscription, you keep your rate. The only time we earn on a deal is when a brand hires our agency to run a managed campaign and you're cast through us.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>Can I switch between monthly and annual?</summary>
+        <div class="faq-body">Anytime. Switching to annual prorates the discount. Switching back to monthly takes effect at the next billing cycle.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>Brands — what does the Free plan get me?</summary>
+        <div class="faq-body">Full marketplace access — browse the entire creator roster, see niches, rates, portfolio samples, and save creators to private lists. Handles and contact info stay hidden until you upgrade. No card required.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>How do contact unlocks work?</summary>
+        <div class="faq-body">On Pro, each unlock reveals a creator's handle and opens a direct message thread. You get 10 per month. On Pro+, unlimited. Used unlocks reset on the 1st.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>Do you take a cut of brand deals?</summary>
+        <div class="faq-body">Not on marketplace deals — when you message a creator direct and book them through the roster, no commission. We make money on brand subscriptions. If you hand a campaign to our agency to run end-to-end, that's a separate quote.</div>
+      </details>
+      <details class="faq-item fade-up">
+        <summary>Is there a refund policy?</summary>
+        <div class="faq-body">Cancel anytime — prorated refund within the first 30 days. After that, your subscription stays active through the period you've paid for and won't renew.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="final">
+  <span class="star-deco" style="top: 14%; left: 6%; color: var(--pink-bright); font-size: 1.7rem; transform: rotate(-15deg);">✦</span>
+
+  <span class="doodle bob" style="top: 8%; right: 14%; --r: 12deg;">
+    <svg width="62" height="62" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FCD735"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M20 36 Q 30 44, 40 36" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap final-inner">
+    <h2 class="fade-up">Start Free. <span class="y">Upgrade When You're Ready.</span></h2>
+    <p class="lede fade-up delay-1">No card needed for the roster. No markup on direct bookings. No DMs lost to the void.</p>
+    <div class="cta-row fade-up delay-2">
+      <a href="/signup?role=creator" class="btn btn-primary">Get on the Roster</a>
+      <a href="contact.html?topic=brand" class="btn btn-pink">I'm a Brand</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="index.html" class="logo" aria-label="Socio Space Studios home"><img src="images/logo.png" alt="Socio Space Studios" class="logo-img" /></a>
+        <p>The <span class="c-y">creator roster</span> and <span class="c-p">business OS</span> for <span class="c-m">UGC creators</span> and <span class="c-o">TikTok Live</span> hosts who are done managing deals in their DMs.</p>
+        <div class="socials">
+          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.13z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Product</h5><ul><li><a href="features.html">For Creators</a></li><li><a href="brands.html">For Brands</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="foot-col"><h5>For Creators</h5><ul><li><a href="/signup?role=creator">Join the Roster</a></li><li><a href="features.html">Creator OS</a></li><li><a href="creator.html">Sample Profile</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div class="credit">© 2026 <span class="c-y">Socio Space Studios</span> · Built by <a href="https://www.stackdstudiosai.com" target="_blank" rel="noopener">Stackd Studios AI</a></div>
+      <div class="credit">Based in the <span class="c-m">USA</span> · <span class="c-p">info@sociospacestudios.com</span></div>
+      <a href="/login" class="foot-login">Sign In <span class="arrow">→</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // ============ Audience toggle (creator vs brand pricing pane) ============
+  (function () {
+    const toggle = document.querySelector('.audience-toggle');
+    if (!toggle) return;
+    const buttons = toggle.querySelectorAll('button[data-audience]');
+    const panes = document.querySelectorAll('[data-pricing-pane]');
+
+    function activate(audience) {
+      buttons.forEach(b => {
+        const on = b.dataset.audience === audience;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panes.forEach(p => {
+        const show = p.dataset.pricingPane === audience;
+        if (show) p.removeAttribute('hidden');
+        else p.setAttribute('hidden', '');
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    buttons.forEach(b => {
+      b.addEventListener('click', () => {
+        activate(b.dataset.audience);
+        try { history.replaceState(null, '', `?for=${b.dataset.audience}`); } catch (_) {}
+      });
+    });
+
+    // On load — respect ?for= query param
+    const params = new URLSearchParams(location.search);
+    const initial = params.get('for') === 'brand' ? 'brand' : 'creator';
+    if (initial === 'brand') activate('brand');
+  })();
+</script>
+
+<script>
+  // ============ Signup → Pricing handoff (Supabase-aware) ============
+  (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+
+    const params  = new URLSearchParams(location.search);
+    const fromSig = params.get('from') === 'signup';
+    let pending = null;
+    try { pending = JSON.parse(localStorage.getItem('os_pending_signup') || 'null'); }
+    catch (_) {}
+
+    if (fromSig && pending) {
+      const banner = document.createElement('div');
+      banner.className = 'signup-welcome';
+      banner.innerHTML =
+        '<div class="signup-welcome-inner">' +
+          '<span class="badge">Step 2 of 2</span>' +
+          '<div class="msg"><strong>Welcome, ' + escapeHtml(pending.name.split(/\s+/)[0]) + '.</strong> ' +
+            'Pick the plan that fits <em>' + escapeHtml(pending.studio) + '</em> and we\'ll set up your workspace.</div>' +
+          '<a href="/login" class="back">Save for later</a>' +
+        '</div>';
+      const hero = document.querySelector('.page-hero');
+      if (hero) hero.parentNode.insertBefore(banner, hero);
+      else document.body.insertBefore(banner, document.body.firstChild);
+    }
+
+    function loadSupabase() {
+      return new Promise(function (resolve, reject) {
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('SDK load failed')); };
+        document.head.appendChild(s);
+      });
+    }
+
+    let SB = null;
+    if (fromSig) {
+      loadSupabase()
+        .then(function () {
+          SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+            auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
+          });
+          window.SBClient = SB;
+        })
+        .catch(function (err) { console.warn('[pricing] Supabase load failed:', err); });
+    }
+
+    async function activateWorkspace(planName) {
+      // Capture studio name from pending signup or existing workspace cache
+      let studioName = pending && pending.studio;
+      if (!studioName) {
+        try {
+          const ws = JSON.parse(localStorage.getItem('os_workspace') || 'null');
+          if (ws) studioName = ws.studio;
+        } catch (_) {}
+      }
+
+      if (SB) {
+        // Real flow: must be authenticated (signup completed)
+        const sessionRes = await SB.auth.getSession();
+        const session = sessionRes && sessionRes.data && sessionRes.data.session;
+        if (!session) {
+          alert('Please confirm your email and sign in, then pick a plan.');
+          location.href = '/login';
+          return;
+        }
+
+        // Resolve studio name
+        const meta = session.user.user_metadata || {};
+        if (!studioName) studioName = meta.studio || (meta.name || 'Your') + "'s Studio";
+
+        // Check if a studio already exists for this owner (resume case)
+        const existing = await SB.from('studios')
+          .select('id')
+          .eq('owner_id', session.user.id)
+          .limit(1)
+          .maybeSingle();
+
+        if (existing.data) {
+          // Update plan on existing studio
+          const upd = await SB.from('studios')
+            .update({ plan: planName })
+            .eq('id', existing.data.id);
+          if (upd.error) {
+            alert('Could not update plan: ' + upd.error.message);
+            return;
+          }
+        } else {
+          const ins = await SB.from('studios')
+            .insert({ name: studioName, plan: planName, owner_id: session.user.id });
+          if (ins.error) {
+            alert('Could not create studio: ' + ins.error.message);
+            return;
+          }
+        }
+
+        localStorage.setItem('os_authed', '1');
+        localStorage.setItem('os_mode', 'workspace');
+        localStorage.removeItem('os_admin_bypass');
+        localStorage.removeItem('os_pending_signup');
+        location.href = 'os/index.html';
+        return;
+      }
+
+      // Fallback: Supabase didn't load. Use legacy localStorage path.
+      if (!studioName) {
+        location.href = '/signup';
+        return;
+      }
+      localStorage.setItem('os_workspace', JSON.stringify({
+        studio: studioName,
+        name: pending ? pending.name : 'You',
+        email: pending ? pending.email : '',
+        plan: planName
+      }));
+      localStorage.setItem('os_authed', '1');
+      localStorage.setItem('os_mode', 'workspace');
+      localStorage.removeItem('os_admin_bypass');
+      localStorage.removeItem('os_pending_signup');
+      location.href = 'os/index.html';
+    }
+
+    if (fromSig) {
+      document.querySelectorAll('.plan-cta, .mini-cta').forEach(function (cta) {
+        cta.addEventListener('click', function (e) {
+          e.preventDefault();
+          const planEl = (cta.closest('.plan') || cta.closest('tr'));
+          let planName = 'Studio';
+          if (planEl) {
+            const h = planEl.querySelector('h3') || planEl.querySelector('.plan-name') || planEl.querySelector('td:first-child');
+            if (h) planName = h.textContent.trim();
+          }
+          activateWorkspace(planName);
+        });
+      });
+    }
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Brands — Socio Space Studios</title>
+<meta name="description" content="Stop scrolling TikTok to find your next creator. Search a vetted roster of UGC creators and TikTok Live hosts by niche, rate, and platform. No markup on direct bookings." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<nav class="site">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Socio Space Studios home">
+      <img src="images/logo.png" alt="Socio Space Studios" class="logo-img" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">For Creators</a></li>
+      <li><a href="brands.html" class="active">For Brands</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="demo.html">Try Demo</a></li>
+      <li><a href="/login">Sign In</a></li>
+      <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Contact Us</a></li>
+    </ul>
+    <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Contact Us</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <span class="star-deco" style="top: 18%; left: 6%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(-15deg);">✦</span>
+  <span class="star-deco" style="top: 26%; right: 8%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(20deg);">★</span>
+  <span class="star-deco" style="bottom: 14%; left: 10%; color: var(--yellow-deep); font-size: 1.3rem; transform: rotate(-10deg);">✦</span>
+
+  <span class="doodle bob" style="top: 10%; right: 14%; --r: 10deg;">
+    <svg width="58" height="58" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FCD735"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M20 36 Q 30 44, 40 36" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+  <span class="doodle" style="top: 14%; left: 12%; transform: rotate(-15deg);">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="#FF7BA8">
+      <path d="M12 21s-7-4.5-9.5-9.5C0.5 7 4 3 8 3c2 0 3 1 4 2 1-1 2-2 4-2 4 0 7.5 4 5.5 8.5C19 16.5 12 21 12 21z" stroke="#161616" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap page-hero-inner">
+    <div class="crumbs fade-up">
+      <a href="index.html">Home</a><span class="sep">/</span><span>For Brands</span>
+    </div>
+    <h1 class="fade-up delay-1">Stop Scrolling TikTok To Find Your Next <span style="color: var(--pink-bright);">Creator.</span></h1>
+    <p class="lede fade-up delay-2">Search a vetted roster of UGC creators and TikTok Live hosts. Filter by niche, platform, rate, and availability. Contact directly. No markup on deals you book through the roster.</p>
+    <div class="cta-row fade-up delay-3">
+      <a href="contact.html?topic=brand" class="btn btn-pink">Contact Us <span class="arrow">→</span></a>
+      <a href="#roster" class="btn btn-outline">Search the Roster</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== STATS BAR ============== -->
+<section class="stats-bar">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-num"><span data-counter="500" data-counter-suffix="+">0+</span></div>
+        <div class="stat-lbl">Vetted Creators</div>
+      </div>
+      <div class="stat-item fade-up delay-1">
+        <div class="stat-num"><span data-counter="2.4" data-counter-prefix="$" data-counter-suffix="M" data-counter-decimals="1">$0</span></div>
+        <div class="stat-lbl">In Deals Tracked</div>
+      </div>
+      <div class="stat-item fade-up delay-2">
+        <div class="stat-num"><span data-counter="4" data-counter-suffix="h">0h</span></div>
+        <div class="stat-lbl">Avg Reply Time</div>
+      </div>
+      <div class="stat-item fade-up delay-3">
+        <div class="stat-num"><span data-counter="1200" data-counter-suffix="+">0+</span></div>
+        <div class="stat-lbl">Brand Matches Made</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ROSTER PREVIEW ============== -->
+<section class="roster-section" id="roster">
+  <span class="star-deco" style="top: 8%; right: 6%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(15deg);">✦</span>
+  <span class="star-deco" style="bottom: 16%; left: 5%; color: var(--mint-deep); font-size: 1.3rem; transform: rotate(-20deg);">★</span>
+
+  <span class="doodle" style="top: 30%; right: 4%; transform: rotate(-10deg);">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <path d="M30 10 Q 50 10, 50 30 Q 50 50, 30 50 Q 14 50, 14 36 Q 14 24, 26 24 Q 36 24, 36 32" stroke="#FF7BA8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap">
+    <div class="roster-grid">
+      <div class="fade-up">
+        <span class="eyebrow" style="color: var(--pink-bright); font-size: 0.85rem; letter-spacing: 0.22em;">Search The Roster</span>
+        <h2 class="section-title" style="margin: 14px 0 18px;">Real Rates. Real Niches. Real Replies.</h2>
+        <p style="font-size: 1.05rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 24px;">Every creator on Socio Space lists their actual rate, niche, audience size, and availability — upfront. No "DM for rates." No back-and-forth on Instagram. Brief, contract, deliverables, payment all flow through one shared workspace.</p>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink); font-weight: 500;">
+            <span style="color: var(--pink-bright); font-family: var(--font-display); flex-shrink: 0;">✦</span>
+            Filter by niche, platform, follower range, rate
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink); font-weight: 500;">
+            <span style="color: var(--pink-bright); font-family: var(--font-display); flex-shrink: 0;">✦</span>
+            See live rates upfront — no markup on direct bookings
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink); font-weight: 500;">
+            <span style="color: var(--pink-bright); font-family: var(--font-display); flex-shrink: 0;">✦</span>
+            Contact creators in one click — average reply: 4 hours
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink); font-weight: 500;">
+            <span style="color: var(--pink-bright); font-family: var(--font-display); flex-shrink: 0;">✦</span>
+            Shared workspace per deal — audit-ready paper trail
+          </li>
+        </ul>
+
+        <a href="creator.html" class="btn btn-pink">View a Sample Profile <span class="arrow">→</span></a>
+      </div>
+
+      <div class="roster-preview fade-up delay-1">
+        <div class="search-bar">
+          <span class="search-ico"></span>
+          Search "beauty UGC creators under $500..."
+        </div>
+        <div class="filter-chips">
+          <span class="filter-chip active" data-filter="all">All</span>
+          <span class="filter-chip" data-filter="beauty">Beauty</span>
+          <span class="filter-chip" data-filter="lifestyle">Lifestyle</span>
+          <span class="filter-chip" data-filter="wellness">Wellness</span>
+          <span class="filter-chip" data-filter="tech">Tech</span>
+          <span class="filter-chip" data-filter="fitness">Fitness</span>
+          <span class="filter-chip" data-filter="food">Food</span>
+        </div>
+        <a href="creator.html" class="creator-row" data-niche="beauty,ugc">
+          <div class="avatar a1" style="overflow: hidden;"><img src="images/maya.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Maya</div><div class="meta">UGC · Beauty · 86k TikTok</div></div>
+          <div class="rate">$350</div>
+        </a>
+        <div class="creator-row" data-niche="lifestyle,live">
+          <div class="avatar a2" style="overflow: hidden;"><img src="images/jordan.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Jordan</div><div class="meta">TikTok Live · Lifestyle · 240k</div></div>
+          <div class="rate">$700</div>
+        </div>
+        <div class="creator-row" data-niche="wellness,ugc">
+          <div class="avatar a3" style="overflow: hidden;"><img src="images/alex.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Alex</div><div class="meta">UGC · Wellness · 42k IG</div></div>
+          <div class="rate">$280</div>
+        </div>
+        <div class="creator-row" data-niche="tech,ugc">
+          <div class="avatar a4" style="overflow: hidden;"><img src="images/simi.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Simi</div><div class="meta">UGC · Tech · 110k YT</div></div>
+          <div class="rate">$520</div>
+        </div>
+        <div class="creator-row" data-niche="beauty,live">
+          <div class="avatar a5" style="overflow: hidden;"><img src="images/devi.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Devi</div><div class="meta">TikTok Live · Beauty · 380k</div></div>
+          <div class="rate">$900</div>
+        </div>
+        <div class="creator-row" data-niche="fitness,ugc">
+          <div class="avatar a6" style="overflow: hidden;"><img src="images/riley.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+          <div><div class="name">Riley</div><div class="meta">UGC · Fitness · 65k</div></div>
+          <div class="rate">$320</div>
+        </div>
+        <div class="creator-row" data-niche="food,ugc">
+          <div class="avatar a1">CN</div>
+          <div><div class="name">Chloe N.</div><div class="meta">UGC · Food · 58k IG</div></div>
+          <div class="rate">$310</div>
+        </div>
+        <div class="creator-row" data-niche="lifestyle,ugc">
+          <div class="avatar a3">EM</div>
+          <div><div class="name">Eli M.</div><div class="meta">UGC · Lifestyle · 92k TikTok</div></div>
+          <div class="rate">$420</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== HOW IT WORKS (brand-side) ============== -->
+<section class="how">
+  <span class="star-deco" style="top: 10%; left: 4%; color: var(--pink-bright); font-size: 1.5rem; transform: rotate(-18deg);">✦</span>
+  <span class="star-deco" style="bottom: 14%; right: 6%; color: var(--yellow-deep); font-size: 1.6rem; transform: rotate(15deg);">✦</span>
+
+  <span class="doodle bob" style="top: 8%; right: 9%; --r: 12deg;">
+    <svg width="58" height="58" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#7ED957"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M18 34 Q 30 46, 42 34" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+  <span class="doodle" style="top: 18%; left: 6%; transform: rotate(8deg);">
+    <svg width="80" height="60" viewBox="0 0 100 80" fill="none">
+      <path d="M10 70 Q 30 10, 90 30" stroke="#161616" stroke-width="2.5" stroke-dasharray="3 5" fill="none" stroke-linecap="round"/>
+      <path d="M82 22 L 90 30 L 80 38" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">From Brief To Posted In 14 Days.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num"><span>01</span></div>
+        <h3>Search a vetted roster</h3>
+        <p>Filter our UGC creators and TikTok Live hosts by niche, platform, follower range, rate, and availability. See real numbers, not guesswork.</p>
+        <span class="step-tag">No login required</span>
+      </div>
+      <div class="step fade-up delay-1">
+        <div class="step-num"><span>02</span></div>
+        <h3>Send a brief in one click</h3>
+        <p>Skip the agency middleman. Drop your brief, see live rates upfront, and get replies in hours — not weeks. Average creator reply time: 4 hours.</p>
+        <span class="step-tag">Direct messaging</span>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step-num"><span>03</span></div>
+        <h3>Run the deal end to end</h3>
+        <p>Brief, contract, deliverables, payment — all tracked in shared workspaces with each creator. Audit-ready paper trail your finance team will love.</p>
+        <span class="step-tag">Brand workspace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TWO PATHS — MARKETPLACE OR AGENCY ============== -->
+<section class="services" id="how-it-works">
+  <span class="star-deco" style="top: 8%; left: 5%; color: var(--pink-bright); font-size: 1.5rem; transform: rotate(-12deg);">✦</span>
+  <span class="star-deco" style="bottom: 10%; right: 5%; color: var(--mint-deep); font-size: 1.6rem; transform: rotate(15deg);">★</span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">Two Ways To Work</span>
+      <h2 class="section-title">Self-Serve Or Done-For-You.</h2>
+      <p class="section-lede">
+        Most brands run their own campaigns through the marketplace. When you'd rather hand it off,
+        our agency takes the whole thing — strategy, casting, scripts, production, paid amplification.
+      </p>
+    </div>
+
+    <div class="svc-grid" style="grid-template-columns: 1fr 1fr; max-width: 880px; margin: 0 auto;">
+      <div class="svc-card fade-up">
+        <div class="svc-icon">🛒</div>
+        <div>
+          <h3>Marketplace · Self-Serve</h3>
+          <ul>
+            <li>Browse the full creator roster free</li>
+            <li>Pay $99/mo+ to unlock contacts &amp; post jobs</li>
+            <li>Hire creators directly — no markup, no commission</li>
+            <li>Manage applications &amp; deals in your dashboard</li>
+          </ul>
+          <a href="pricing.html?for=brand" class="btn btn-outline" style="margin-top: 14px; display:inline-flex;">
+            See marketplace pricing <span class="arrow" style="margin-left:6px;">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up delay-1">
+        <div class="svc-icon">✨</div>
+        <div>
+          <h3>Agency · Done-For-You</h3>
+          <ul>
+            <li>We handle strategy, casting, scripts, production</li>
+            <li>Whitelisting, paid amplification, AI variations</li>
+            <li>One contact, one invoice, one team end-to-end</li>
+            <li>Need a campaign you don't want to run? Hand it to us.</li>
+          </ul>
+          <a href="contact.html?topic=brand" class="btn btn-pink" style="margin-top: 14px; display:inline-flex;">
+            Talk to our agency <span class="arrow" style="margin-left:6px;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHY GRID — AGENCY CAPABILITIES ============== -->
+<section class="why">
+  <span class="star-deco" style="top: 10%; left: 4%; color: var(--pink-bright); font-size: 1.6rem; transform: rotate(-12deg);">✦</span>
+  <span class="star-deco" style="top: 18%; right: 5%; color: var(--mint-deep); font-size: 1.3rem; transform: rotate(20deg);">★</span>
+  <span class="star-deco" style="bottom: 8%; right: 6%; color: var(--yellow-deep); font-size: 1.7rem; transform: rotate(-15deg);">✦</span>
+
+  <span class="doodle bob" style="top: 7%; right: 9%; --r: 10deg;">
+    <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FFD0A8"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M20 36 Q 30 44, 40 36" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">When We Run It</span>
+      <h2 class="section-title">What The Agency Brings.</h2>
+      <p class="section-lede">
+        Hand off a campaign and you get all of this without scaling internal headcount.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-tile fade-up">
+        <div class="why-image"><span class="ill">🤝</span></div>
+        <h4>Hybrid AI + Human<br>Creator Strategy</h4>
+        <p>Real creators for authenticity. AI variations for scale. Pick the mix that fits your campaign.</p>
+      </div>
+      <div class="why-tile fade-up">
+        <div class="why-image"><span class="ill">🎨</span></div>
+        <h4>Unlimited AI Model<br>Variations</h4>
+        <p>Buy a model pack once. Get unlimited photo and video variations in your exact brand aesthetic forever.</p>
+      </div>
+      <div class="why-tile fade-up">
+        <div class="why-image"><span class="ill">📹</span></div>
+        <h4>High Volume<br>Video Production</h4>
+        <p>Ship 30+ videos a month, not 3. Scale content without scaling shoot days.</p>
+      </div>
+      <div class="why-tile fade-up">
+        <div class="why-image"><span class="ill">⚡</span></div>
+        <h4>Fast<br>Turnaround</h4>
+        <p>First drafts in 72 hours. Final delivery in two weeks. No three-month agency timelines.</p>
+      </div>
+      <div class="why-tile fade-up delay-1">
+        <div class="why-image"><span class="ill">📊</span></div>
+        <h4>Data-Driven<br>Creative</h4>
+        <p>Hooks tested before launch. Winners scaled, losers killed. Real performance data on every campaign.</p>
+      </div>
+      <div class="why-tile fade-up delay-1">
+        <div class="why-image"><span class="ill">💰</span></div>
+        <h4>Lower Production<br>Costs</h4>
+        <p>Cut content costs by 60%+ vs. traditional shoots. No studios, no flights, no day rates.</p>
+      </div>
+      <div class="why-tile fade-up delay-1">
+        <div class="why-image"><span class="ill">🛠️</span></div>
+        <h4>Done-For-You<br>Systems</h4>
+        <p>We handle sourcing, briefing, shooting, editing, and delivery. You approve and post.</p>
+      </div>
+      <div class="why-tile fade-up delay-1">
+        <div class="why-image"><span class="ill">📈</span></div>
+        <h4>Daily Trends<br>&amp; Insights</h4>
+        <p>Our team monitors what's winning on TikTok every day — baked into every brief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider into yellow testimonial -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 0, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 56 H 0 Z" fill="#FCE680"/>
+  </svg>
+</div>
+
+<!-- ============== BIG TESTIMONIAL ============== -->
+<section class="t-big">
+  <span class="doodle bob" style="top: 10%; right: 8%; --r: 10deg;">
+    <svg width="56" height="56" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FFB8CF"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M20 36 Q 30 44, 40 36" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap t-big-inner">
+    <h2 class="fade-up">PLENTY FOR ALL INDUSTRIES</h2>
+    <p class="t-big-quote fade-up delay-1">
+      "Socio Space completely changed how we create content. Instead of paying creators for every shoot, we bought a few AI model packs and instantly had unlimited photo and video variations in our exact brand aesthetic. It cut our production costs by more than half and tripled the amount of content we publish. Nothing else we've tried comes close."
+    </p>
+    <p class="t-big-author fade-up delay-2">— LENA M., BEAUTY BRAND FOUNDER</p>
+  </div>
+</section>
+
+<!-- wave divider out of yellow testimonial -->
+<div class="wave-div" aria-hidden="true">
+  <svg viewBox="0 0 1200 56" preserveAspectRatio="none">
+    <path d="M0 28 Q 60 56, 120 28 T 240 28 T 360 28 T 480 28 T 600 28 T 720 28 T 840 28 T 960 28 T 1080 28 T 1200 28 V 0 H 0 Z" fill="#FCE680"/>
+  </svg>
+</div>
+
+<!-- ============== BRAND PRICING TEASER ============== -->
+<section class="pricing" id="pricing">
+  <span class="star-deco" style="top: 6%; right: 8%; color: var(--ink); font-size: 1.5rem; transform: rotate(15deg);">✦</span>
+  <span class="star-deco" style="bottom: 12%; right: 4%; color: var(--ink); font-size: 1.6rem; transform: rotate(-10deg);">✦</span>
+
+  <div class="wrap pricing-inner">
+    <div class="section-head-center fade-up">
+      <span class="eyebrow">For Brands</span>
+      <h2 class="section-title">Browse Free. Pay To Connect.</h2>
+      <p class="section-lede" style="margin-top:10px;">
+        See the full creator roster on us. Upgrade when you're ready to message creators or post jobs.
+      </p>
+    </div>
+
+    <div class="plans">
+      <div class="plan fade-up delay-1">
+        <h3>Free</h3>
+        <p class="plan-tagline">Browse the marketplace.</p>
+        <div class="price">$0 <span class="per">/forever</span></div>
+        <ul class="feats">
+          <li>Browse the full creator roster</li>
+          <li>See niches, rates, portfolio samples</li>
+          <li>Save creators to a private list</li>
+          <li>Handles + contact info hidden</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start Browsing</a>
+      </div>
+
+      <div class="plan featured fade-up delay-2">
+        <span class="plan-tag">★ MOST POPULAR</span>
+        <h3>Pro</h3>
+        <p class="plan-tagline">Reach the creators you want.</p>
+        <div class="price">$99 <span class="per">/month</span></div>
+        <ul class="feats">
+          <li>Everything in Free</li>
+          <li>10 contact unlocks per month</li>
+          <li>3 job posts per month</li>
+          <li>Direct messages with creators</li>
+          <li>Application management</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+
+      <div class="plan fade-up delay-3">
+        <h3>Pro+</h3>
+        <p class="plan-tagline">Run ongoing campaigns.</p>
+        <div class="price">$199 <span class="per">/month</span></div>
+        <ul class="feats">
+          <li>Everything in Pro</li>
+          <li>Unlimited contact unlocks</li>
+          <li>Unlimited job posts</li>
+          <li>Advanced search + saved filters</li>
+          <li>Priority placement to creators</li>
+        </ul>
+        <a href="/signup?role=brand" class="plan-cta">Start 14-Day Trial</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 40px;" class="fade-up delay-3">
+      <a href="pricing.html?for=brand" class="btn btn-outline">See full pricing details <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="final">
+  <span class="star-deco" style="top: 14%; left: 6%; color: var(--pink-bright); font-size: 1.7rem; transform: rotate(-15deg);">✦</span>
+
+  <span class="doodle bob" style="top: 10%; right: 14%; --r: 12deg;">
+    <svg width="62" height="62" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="24" stroke="#161616" stroke-width="3" fill="#FCD735"/>
+      <circle cx="22" cy="26" r="2.5" fill="#161616"/>
+      <circle cx="38" cy="26" r="2.5" fill="#161616"/>
+      <path d="M20 36 Q 30 44, 40 36" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </span>
+
+  <div class="wrap final-inner">
+    <h2 class="fade-up">Your Next Creator Is Already <span class="y">On The Roster.</span></h2>
+    <p class="lede fade-up delay-1">Vetted creators. Real rates. Real replies — measured in hours, not weeks. Marketplace prices, agency option when you need it.</p>
+    <div class="cta-row fade-up delay-2">
+      <a href="contact.html?topic=brand" class="btn btn-pink">Contact Us</a>
+      <a href="#roster" class="btn btn-outline">Search the Roster</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="index.html" class="logo" aria-label="Socio Space Studios home"><img src="images/logo.png" alt="Socio Space Studios" class="logo-img" /></a>
+        <p>The <span class="c-y">creator roster</span> and <span class="c-p">business OS</span> for <span class="c-m">UGC creators</span> and <span class="c-o">TikTok Live</span> hosts who are done managing deals in their DMs.</p>
+        <div class="socials">
+          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.13z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Product</h5><ul><li><a href="features.html">For Creators</a></li><li><a href="brands.html">For Brands</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="foot-col"><h5>For Creators</h5><ul><li><a href="/signup?role=creator">Join the Roster</a></li><li><a href="features.html">Creator OS</a></li><li><a href="creator.html">Sample Profile</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div class="credit">© 2026 <span class="c-y">Socio Space Studios</span> · Built by <a href="https://www.stackdstudiosai.com" target="_blank" rel="noopener">Stackd Studios AI</a></div>
+      <div class="credit">Based in the <span class="c-m">USA</span> · <span class="c-p">info@sociospacestudios.com</span></div>
+      <a href="/login" class="foot-login">Sign In <span class="arrow">→</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

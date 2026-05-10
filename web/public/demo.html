@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Try the Demo · Socio Space Studios</title>
+<meta name="description" content="Step inside a fully populated Socio Space workspace. No signup, no email — just click around a sample studio with creators, pipeline, inbox, and analytics already wired up." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+<!-- ============== NAV ============== -->
+<nav class="site">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Socio Space Studios home">
+      <img src="images/logo.png" alt="Socio Space Studios" class="logo-img" />
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">For Creators</a></li>
+      <li><a href="brands.html">For Brands</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="demo.html" class="active">Try Demo</a></li>
+      <li><a href="/login">Sign In</a></li>
+      <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Contact Us</a></li>
+    </ul>
+
+    <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Contact Us</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <span class="star-deco" style="top: 18%; left: 7%; color: var(--pink-bright); font-size: 1.7rem; transform: rotate(-12deg);">✦</span>
+  <span class="star-deco" style="top: 28%; right: 9%; color: var(--mint-deep); font-size: 1.4rem; transform: rotate(18deg);">★</span>
+  <span class="star-deco" style="bottom: 18%; left: 14%; color: var(--orange); font-size: 1.2rem; transform: rotate(8deg);">✦</span>
+
+  <span class="doodle bob" style="top: 14%; right: 16%; --r: 12deg;">
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+      <rect x="6" y="14" width="46" height="36" rx="4" fill="#FCD735" stroke="#161616" stroke-width="2.5"/>
+      <rect x="10" y="20" width="14" height="3" fill="#161616"/>
+      <rect x="10" y="26" width="22" height="2" fill="#161616" opacity="0.4"/>
+      <rect x="10" y="30" width="18" height="2" fill="#161616" opacity="0.4"/>
+      <circle cx="40" cy="38" r="6" fill="#FF7BA8" stroke="#161616" stroke-width="2"/>
+    </svg>
+  </span>
+
+  <div class="wrap page-hero-inner">
+    <div class="crumbs fade-up">
+      <a href="index.html">Home</a><span class="sep">/</span><span>Demo</span>
+    </div>
+    <h1 class="fade-up delay-1">Take it for <span style="color: var(--pink-bright);">a spin.</span></h1>
+    <p class="lede fade-up delay-2">No signup, no email, no anything. Click into a fully populated Socio Space workspace and poke around like it's already yours.</p>
+  </div>
+</section>
+
+<!-- ============== DEMO LAUNCH ============== -->
+<section class="demo-launch">
+  <div class="wrap">
+
+    <div class="demo-launch-card fade-up">
+      <div class="dl-left">
+        <span class="caveat-tag">no commitment needed</span>
+        <span class="eyebrow">Read-Only Demo</span>
+        <h2>Ready when you are.</h2>
+        <p>You'll land in a sample studio with eight creators, a live pipeline, recent inquiries, mock invoices, and three months of analytics. None of it is real, all of it is interactive.</p>
+        <div class="dl-actions">
+          <button id="launch-demo" class="btn btn-primary btn-lg">
+            Launch the demo
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="margin-left:8px;">
+              <path d="M1 7h15M11 1l5 6-5 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="/signup" class="btn btn-secondary btn-lg">Skip — create my own</a>
+        </div>
+        <p class="fine">Read-only · No data is saved · Exit anytime via Sign out</p>
+      </div>
+
+      <div class="dl-right">
+        <div class="dl-window">
+          <div class="dl-window-bar">
+            <span></span><span></span><span></span>
+            <div class="dl-url">sociospace.studio/os</div>
+          </div>
+          <div class="dl-window-body">
+            <div class="dl-row"><div class="dl-dot pink"></div>14 active campaigns<span class="dl-amt">$48.2k</span></div>
+            <div class="dl-row"><div class="dl-dot mint"></div>5 new applications<span class="dl-amt">+3</span></div>
+            <div class="dl-row"><div class="dl-dot yellow"></div>12 inbox messages<span class="dl-amt">4 new</span></div>
+            <div class="dl-row"><div class="dl-dot lilac"></div>8 creators on roster<span class="dl-amt">live</span></div>
+            <div class="dl-bar"><div class="dl-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== WHAT'S INSIDE ============== -->
+<section class="demo-inside">
+  <div class="wrap">
+    <span class="eyebrow fade-up" style="color: var(--pink-bright);">What's Inside</span>
+    <h2 class="section-title fade-up">Every Module, Already <span class="c-y">Wired Up.</span></h2>
+    <p class="section-lede fade-up delay-1">The demo isn't a slideshow — it's the actual product running with sample data. Every page is clickable, every filter works, every modal opens.</p>
+
+    <div class="demo-grid">
+      <div class="demo-card fade-up">
+        <div class="demo-card-icon yellow">◇</div>
+        <h3>Dashboard</h3>
+        <p>KPI tiles, pipeline snapshot, live activity feed, weekly bookings, and recent applications.</p>
+      </div>
+      <div class="demo-card fade-up delay-1">
+        <div class="demo-card-icon pink">★</div>
+        <h3>Roster</h3>
+        <p>Eight sample creators with niches, rates, follower counts, and avg deal value. Filter by niche.</p>
+      </div>
+      <div class="demo-card fade-up delay-2">
+        <div class="demo-card-icon mint">◎</div>
+        <h3>Pipeline</h3>
+        <p>Five-stage kanban: Pitched → Negotiating → Signed → Delivered → Paid. With deal cards.</p>
+      </div>
+      <div class="demo-card fade-up">
+        <div class="demo-card-icon orange">✉</div>
+        <h3>Inbox</h3>
+        <p>Brand inquiries, creator support tickets, press requests, careers — all routed by topic.</p>
+      </div>
+      <div class="demo-card fade-up delay-1">
+        <div class="demo-card-icon lilac">$</div>
+        <h3>Payments</h3>
+        <p>Mock invoices to clients, payouts queue to creators, studio commission ledger.</p>
+      </div>
+      <div class="demo-card fade-up delay-2">
+        <div class="demo-card-icon yellow">⌁</div>
+        <h3>Analytics</h3>
+        <p>Eight-week revenue bars, pipeline funnel, top creators, niche mix breakdown.</p>
+      </div>
+      <div class="demo-card fade-up">
+        <div class="demo-card-icon pink">◷</div>
+        <h3>Bookings</h3>
+        <p>Calendar of TikTok Lives, shoot days, and delivery deadlines for the month.</p>
+      </div>
+      <div class="demo-card fade-up delay-1">
+        <div class="demo-card-icon mint">§</div>
+        <h3>Contracts</h3>
+        <p>Standard templates for UGC, Live, MSA — plus a log of recent signed agreements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="demo-faq-section">
+  <div class="wrap">
+    <h2 class="section-title fade-up" style="text-align:center;">Quick Answers.</h2>
+
+    <div class="demo-faq-grid">
+      <div class="demo-faq-card fade-up">
+        <h4>Is anything I do saved?</h4>
+        <p>No. The demo is read-only sample data — your clicks don't change anything for anyone else.</p>
+      </div>
+      <div class="demo-faq-card fade-up delay-1">
+        <h4>Do I need an email to enter?</h4>
+        <p>Just your name and email so we know who came by — no password, no card, nothing else. Then you're in.</p>
+      </div>
+      <div class="demo-faq-card fade-up delay-2">
+        <h4>How do I exit?</h4>
+        <p>Hit "Sign out" in the sidebar, or just close the tab. Coming back to the demo is one click away.</p>
+      </div>
+      <div class="demo-faq-card fade-up">
+        <h4>Is this what I'd actually get?</h4>
+        <p>It's the same UI you'd use after signing up — creator side or brand side. Your real account starts empty until you add data.</p>
+      </div>
+      <div class="demo-faq-card fade-up delay-1">
+        <h4>Can I share the demo link?</h4>
+        <p>Send anyone to <code>sociospace.studio/demo</code>. Useful for showing teammates or partners how it works.</p>
+      </div>
+      <div class="demo-faq-card fade-up delay-2">
+        <h4>What happens after I sign up?</h4>
+        <p>Pick whether you're a creator or a brand. Creators set up a profile (free forever). Brands pick a plan to unlock contacts and post jobs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="demo-final">
+  <span class="star-deco" style="top: 14%; left: 9%; color: var(--yellow); font-size: 1.6rem; transform: rotate(-10deg);">✦</span>
+  <span class="star-deco" style="bottom: 18%; right: 11%; color: var(--pink-bright); font-size: 1.4rem; transform: rotate(20deg);">★</span>
+
+  <div class="wrap" style="text-align: center; position: relative; z-index: 2;">
+    <h2 class="section-title fade-up" style="color: var(--cream);">Liked what you saw?</h2>
+    <p class="fade-up delay-1" style="color: rgba(255,247,222,0.78); font-size: 1.05rem; max-width: 50ch; margin: 14px auto 30px;">Get your own workspace in under a minute. We'll set it up branded to your studio, ready for your first creator.</p>
+    <div class="cta-row fade-up delay-2" style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+      <a href="/signup" class="btn btn-primary btn-lg">Start my workspace →</a>
+      <a href="pricing.html" class="btn btn-yellow-outline btn-lg">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="index.html" class="logo" aria-label="Socio Space Studios home">
+          <img src="images/logo.png" alt="Socio Space Studios" class="logo-img" />
+        </a>
+        <p>The <span class="c-y">creator roster</span> and <span class="c-p">business OS</span> for <span class="c-m">UGC creators</span> and <span class="c-o">TikTok Live</span> hosts who are done managing deals in their DMs.</p>
+        <div class="socials">
+          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.13z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">For Creators</a></li>
+          <li><a href="brands.html">For Brands</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="demo.html">Try Demo</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>For Creators</h5>
+        <ul>
+          <li><a href="/signup?role=creator">Join the Roster</a></li>
+          <li><a href="features.html">Creator OS</a></li>
+          <li><a href="creator.html">Sample Profile</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div class="credit">© 2026 <span class="c-y">Socio Space Studios</span> · Built by <a href="https://www.stackdstudiosai.com" target="_blank" rel="noopener">Stackd Studios AI</a></div>
+      <div class="credit">Based in the <span class="c-m">USA</span> · <span class="c-p">info@sociospacestudios.com</span></div>
+      <a href="/login" class="foot-login">Sign In <span class="arrow">→</span></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== LEAD CAPTURE MODAL ============== -->
+<div id="lead-modal" class="lead-modal-backdrop" style="display:none;" aria-hidden="true">
+  <div class="lead-modal" role="dialog" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-sub">
+    <button class="lead-modal-close" type="button" aria-label="Close">×</button>
+    <span class="lead-modal-tag">Quick intro</span>
+    <h3 id="lead-modal-title">First — who do we have?</h3>
+    <p id="lead-modal-sub">Drop your name and email so we know who's checking out the studio. No spam, no newsletter — we'll only follow up if you ask.</p>
+    <form id="lead-form" novalidate>
+      <div class="lead-field">
+        <label for="lead-name">Your name</label>
+        <input id="lead-name" name="name" type="text" placeholder="Maya" autocomplete="name" required />
+      </div>
+      <div class="lead-field">
+        <label for="lead-email">Email</label>
+        <input id="lead-email" name="email" type="email" placeholder="you@studio.com" autocomplete="email" required />
+      </div>
+      <div id="lead-error" class="lead-error"></div>
+      <button type="submit" class="btn btn-primary lead-submit">Open the demo →</button>
+      <p class="lead-fine">Takes 5 seconds. You'll land in the sample studio right after.</p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .lead-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(22,22,22,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: leadFadeIn 0.18s ease;
+  }
+  .lead-modal {
+    background: var(--cream, #FBF6E6);
+    border: 3px solid var(--ink, #161616);
+    border-radius: 18px;
+    width: 100%;
+    max-width: 440px;
+    padding: 36px 32px 28px;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--ink, #161616);
+    animation: leadModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .lead-modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: transparent;
+    border: 0;
+    font-size: 1.4rem;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--ink-3, #5A5A5A);
+    line-height: 1;
+  }
+  .lead-modal-close:hover { background: rgba(22,22,22,0.06); color: var(--ink); }
+  .lead-modal-tag {
+    display: inline-block;
+    background: var(--yellow, #FCD735);
+    color: var(--ink, #161616);
+    font-family: var(--font-display, 'Archivo Black', sans-serif);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .lead-modal h3 {
+    font-family: var(--font-display, 'Archivo Black', sans-serif);
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    margin: 0 0 8px;
+    letter-spacing: -0.012em;
+    line-height: 1.1;
+  }
+  .lead-modal h3 + p {
+    color: var(--ink-3, #5A5A5A);
+    font-size: 0.92rem;
+    margin: 0 0 22px;
+    line-height: 1.5;
+  }
+  .lead-field { margin-bottom: 12px; }
+  .lead-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--ink-2, #2A2A2A);
+  }
+  .lead-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--ink, #161616);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fff;
+    color: var(--ink, #161616);
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow 0.15s ease;
+  }
+  .lead-field input:focus { box-shadow: 4px 4px 0 var(--ink, #161616); }
+  .lead-error {
+    font-size: 0.82rem;
+    color: var(--error, #E64A4A);
+    min-height: 18px;
+    margin: 2px 0 6px;
+  }
+  .lead-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  .lead-fine {
+    font-size: 0.74rem;
+    color: var(--ink-4, #8C8C8C);
+    text-align: center;
+    margin: 14px 0 0;
+  }
+  @keyframes leadFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes leadModalIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<script src="script.js"></script>
+<script>
+  // ============ Demo entry · lead capture ============
+  // /demo/ is a fully isolated read-only workspace — no localStorage flags,
+  // no auth, no shared state with the real /os/ workspace.
+  // Before entering, we ask first-time visitors for name + email so we can
+  // follow up. Repeat visits skip the modal.
+  (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+    const DEMO_URL          = 'demo/index.html';
+    const SEEN_KEY          = 'demo_lead_seen';
+
+    function loadSDK() {
+      return new Promise(function(resolve, reject) {
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL; s.onload = resolve; s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+    let SB = null;
+    loadSDK()
+      .then(function () { SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); })
+      .catch(function () { /* fallback: skip save, still let them through */ });
+
+    const launchBtn = document.getElementById('launch-demo');
+    const modal     = document.getElementById('lead-modal');
+    const form      = document.getElementById('lead-form');
+    const errorEl   = document.getElementById('lead-error');
+    const closeBtn  = modal.querySelector('.lead-modal-close');
+
+    function openModal() {
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () {
+        const first = modal.querySelector('input');
+        if (first) first.focus();
+      }, 60);
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    function goToDemo() { window.location.href = DEMO_URL; }
+
+    if (launchBtn) {
+      launchBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Repeat visitors who already submitted skip the modal.
+        if (localStorage.getItem(SEEN_KEY) === '1') { goToDemo(); return; }
+        openModal();
+      });
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name  = form.name.value.trim();
+      const email = form.email.value.trim();
+      errorEl.textContent = '';
+      if (!name || !email) { errorEl.textContent = 'Both fields, please.'; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorEl.textContent = "That email looks off — double-check it?";
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'One sec…';
+
+      let savedOk = false;
+      if (SB) {
+        try {
+          const { error } = await SB.from('demo_leads').insert({
+            name: name,
+            email: email,
+            source: 'demo-launch',
+            meta: { referrer: document.referrer || null, ua: navigator.userAgent }
+          });
+          if (!error) savedOk = true;
+          else console.warn('[demo lead] insert failed:', error);
+        } catch (err) { console.warn('[demo lead]', err); }
+      }
+
+      // Set seen flag and redirect — don't block on save failure.
+      try {
+        localStorage.setItem(SEEN_KEY, '1');
+        localStorage.setItem('demo_lead_info', JSON.stringify({ name: name, email: email, at: Date.now() }));
+      } catch (_) {}
+
+      goToDemo();
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS custom properties so legacy ported markup using var(--*) keeps working */
+:root {
+  --ink: #161616;
+  --ink-2: #2A2A2A;
+  --ink-3: #5A5A5A;
+  --ink-4: #8C8C8C;
+  --cream: #FFF7DE;
+  --cream-2: #FFF1C8;
+  --yellow: #FCD735;
+  --yellow-deep: #F4C700;
+  --yellow-soft: #FFF3A8;
+  --pink-bright: #FF5C95;
+  --pink: #FF7BA8;
+  --pink-soft: #FFE4ED;
+  --mint: #7FE5C2;
+  --mint-deep: #3DBD9C;
+  --mint-soft: #DDF6EC;
+  --orange: #FF8C5A;
+  --lilac: #C8B4E0;
+  --peach: #FFC9A8;
+  --white: #FFFFFF;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html, body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Reusable button styles ported from /style.css */
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-7 py-4 rounded-pill font-display uppercase text-sm
+           border-[2.5px] border-ink whitespace-nowrap transition-[transform,box-shadow,background,color] duration-200;
+    letter-spacing: 0.05em;
+  }
+  .btn-primary {
+    @apply btn bg-yellow text-ink shadow-ink-4;
+  }
+  .btn-primary:hover {
+    @apply -translate-x-0.5 -translate-y-0.5 shadow-ink-6;
+    background: #FFE066;
+  }
+  .btn-pink {
+    @apply btn bg-pink-bright text-white border-ink;
+  }
+  .btn-outline {
+    @apply btn bg-transparent text-ink hover:bg-ink hover:text-cream;
+  }
+}
