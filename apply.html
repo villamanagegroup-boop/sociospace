@@ -26,6 +26,7 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="demo.html">Try Demo</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="os/login.html">Studio Sign-in</a></li>
       <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Book a Campaign</a></li>
     </ul>
     <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Book a Campaign</a>
@@ -296,5 +297,109 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ============ Submit to Supabase applications table ============
+  (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+
+    function loadSDK(){
+      return new Promise(function(resolve, reject){
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL; s.onload = resolve; s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    let SB = null;
+    loadSDK().then(function(){
+      SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }).catch(function(){});
+
+    // Convert "10k – 50k" → midpoint integer
+    function followerRangeToInt(s){
+      if (!s) return null;
+      const m = s.replace(/,/g,'').match(/(\d+)\s*k?\s*[–\-]?\s*(\d+)?\s*k?/i);
+      if (!m) return null;
+      const a = parseInt(m[1], 10);
+      const b = m[2] ? parseInt(m[2], 10) : a;
+      const k = /k|K/.test(s);
+      const avg = Math.round((a + b) / 2 * (k ? 1000 : 1));
+      return avg || null;
+    }
+
+    const form = document.querySelector('form[data-form-type="apply"]');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      let invalid = null;
+      form.querySelectorAll('[required]').forEach(function(f){
+        if (!f.value.trim()) {
+          f.style.borderColor = '#FF7BA8';
+          if (!invalid) invalid = f;
+        } else {
+          f.style.borderColor = '';
+        }
+      });
+      if (invalid) { invalid.focus(); return; }
+
+      const data = {};
+      new FormData(form).forEach(function(v, k){ data[k] = v; });
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Submitting…'; }
+
+      const niches = data.niches ? String(data.niches).split(',').filter(Boolean) : [];
+      const links = (data.samples || '').split(/\s+/).filter(function(s){ return /^https?:\/\//.test(s); });
+
+      const payload = {
+        name:       data.name,
+        email:      data.email || null,
+        handle:     data.handle || null,
+        niches:     niches,
+        followers:  followerRangeToInt(data.followers),
+        engagement_rate: null,
+        pitch:      data.why || null,
+        links:      { samples: data.samples || null, urls: links, platform: data.platform, rate: data.rate }
+      };
+
+      let savedOk = false;
+      let saveError = null;
+      if (SB) {
+        try {
+          const { error } = await SB.from('applications').insert(payload);
+          if (!error) savedOk = true;
+          else { saveError = error; console.error('[apply] insert error:', error); }
+        } catch (err) { saveError = err; console.error('[apply] insert threw:', err); }
+      } else {
+        saveError = new Error('Connection unavailable');
+      }
+
+      if (savedOk) {
+        const success = form.querySelector('.form-success');
+        if (success) success.classList.add('show');
+        form.querySelectorAll('input, textarea, select').forEach(function(el){ el.value = ''; });
+        form.querySelectorAll('.form-chip').forEach(function(c){ c.classList.remove('on'); });
+      } else {
+        const success = form.querySelector('.form-success');
+        if (success) {
+          success.classList.add('show');
+          success.style.background = '#FCE3E3';
+          success.style.color = '#E64A4A';
+          success.textContent = '✗ Couldn\'t submit — ' + (saveError && saveError.message ? saveError.message : 'try again') + '. Email creators@sociospacestudios.com if it persists.';
+        }
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = savedOk ? '✓ Submitted' : (originalText || 'Submit');
+        setTimeout(function(){ submitBtn.innerHTML = originalText; }, 2400);
+      }
+    });
+  })();
+</script>
 </body>
 </html>

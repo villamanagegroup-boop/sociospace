@@ -26,6 +26,7 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="demo.html">Try Demo</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="os/login.html">Studio Sign-in</a></li>
       <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Book a Campaign</a></li>
     </ul>
     <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Book a Campaign</a>
@@ -322,5 +323,96 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ============ Submit to Supabase inquiries table ============
+  (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+
+    function loadSDK(){
+      return new Promise(function(resolve, reject){
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL; s.onload = resolve; s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    let SB = null;
+    loadSDK().then(function(){
+      SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }).catch(function(){ /* fallback: form just shows success without saving */ });
+
+    const form = document.querySelector('form[data-form-type="contact"]');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      // Basic required-field check (preserves existing UI)
+      let invalid = null;
+      form.querySelectorAll('[required]').forEach(function(f){
+        if (!f.value.trim()) {
+          f.style.borderColor = '#FF7BA8';
+          if (!invalid) invalid = f;
+        } else {
+          f.style.borderColor = '';
+        }
+      });
+      if (invalid) { invalid.focus(); return; }
+
+      const data = {};
+      new FormData(form).forEach(function(v, k){ data[k] = v; });
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
+
+      const niches = data.niches ? String(data.niches).split(',').filter(Boolean) : null;
+      const payload = {
+        topic:      data.topic || 'general',
+        from_name:  data.name || null,
+        from_email: data.email || null,
+        subject:    data.subject || null,
+        message:    data.message || null,
+        niches:     niches,
+        source_url: location.href,
+        meta:       data.company ? { company: data.company } : null
+      };
+
+      let savedOk = false;
+      let saveError = null;
+      if (SB) {
+        try {
+          const { error } = await SB.from('inquiries').insert(payload);
+          if (!error) savedOk = true;
+          else { saveError = error; console.error('[contact] insert error:', error); }
+        } catch (err) { saveError = err; console.error('[contact] insert threw:', err); }
+      } else {
+        saveError = new Error('Connection unavailable');
+      }
+
+      if (savedOk) {
+        const success = form.querySelector('.form-success');
+        if (success) success.classList.add('show');
+        form.querySelectorAll('input, textarea, select').forEach(function(el){ el.value = ''; });
+        form.querySelectorAll('.chip-toggle').forEach(function(c){ c.classList.remove('on'); });
+      } else {
+        const success = form.querySelector('.form-success');
+        if (success) {
+          success.classList.add('show');
+          success.style.background = '#FCE3E3';
+          success.style.color = '#E64A4A';
+          success.textContent = '✗ Couldn\'t send — ' + (saveError && saveError.message ? saveError.message : 'try again') + '. Email hello@sociospacestudios.com if it persists.';
+        }
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = savedOk ? '✓ Sent' : (originalText || 'Send');
+        setTimeout(function(){ submitBtn.innerHTML = originalText; }, 2400);
+      }
+    });
+  })();
+</script>
 </body>
 </html>

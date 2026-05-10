@@ -28,6 +28,7 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="demo.html" class="active">Try Demo</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="os/login.html">Studio Sign-in</a></li>
       <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Book a Campaign</a></li>
     </ul>
 
@@ -264,14 +265,235 @@
   </div>
 </footer>
 
+<!-- ============== LEAD CAPTURE MODAL ============== -->
+<div id="lead-modal" class="lead-modal-backdrop" style="display:none;" aria-hidden="true">
+  <div class="lead-modal" role="dialog" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-sub">
+    <button class="lead-modal-close" type="button" aria-label="Close">×</button>
+    <span class="lead-modal-tag">Quick intro</span>
+    <h3 id="lead-modal-title">First — who do we have?</h3>
+    <p id="lead-modal-sub">Drop your name and email so we know who's checking out the studio. No spam, no newsletter — we'll only follow up if you ask.</p>
+    <form id="lead-form" novalidate>
+      <div class="lead-field">
+        <label for="lead-name">Your name</label>
+        <input id="lead-name" name="name" type="text" placeholder="Maya Chen" autocomplete="name" required />
+      </div>
+      <div class="lead-field">
+        <label for="lead-email">Email</label>
+        <input id="lead-email" name="email" type="email" placeholder="you@studio.com" autocomplete="email" required />
+      </div>
+      <div id="lead-error" class="lead-error"></div>
+      <button type="submit" class="btn btn-primary lead-submit">Open the demo →</button>
+      <p class="lead-fine">Takes 5 seconds. You'll land in the sample studio right after.</p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .lead-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(22,22,22,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: leadFadeIn 0.18s ease;
+  }
+  .lead-modal {
+    background: var(--cream, #FBF6E6);
+    border: 3px solid var(--ink, #161616);
+    border-radius: 18px;
+    width: 100%;
+    max-width: 440px;
+    padding: 36px 32px 28px;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--ink, #161616);
+    animation: leadModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .lead-modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: transparent;
+    border: 0;
+    font-size: 1.4rem;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--ink-3, #5A5A5A);
+    line-height: 1;
+  }
+  .lead-modal-close:hover { background: rgba(22,22,22,0.06); color: var(--ink); }
+  .lead-modal-tag {
+    display: inline-block;
+    background: var(--yellow, #FCD735);
+    color: var(--ink, #161616);
+    font-family: var(--font-display, 'Archivo Black', sans-serif);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .lead-modal h3 {
+    font-family: var(--font-display, 'Archivo Black', sans-serif);
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    margin: 0 0 8px;
+    letter-spacing: -0.012em;
+    line-height: 1.1;
+  }
+  .lead-modal h3 + p {
+    color: var(--ink-3, #5A5A5A);
+    font-size: 0.92rem;
+    margin: 0 0 22px;
+    line-height: 1.5;
+  }
+  .lead-field { margin-bottom: 12px; }
+  .lead-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--ink-2, #2A2A2A);
+  }
+  .lead-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--ink, #161616);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fff;
+    color: var(--ink, #161616);
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow 0.15s ease;
+  }
+  .lead-field input:focus { box-shadow: 4px 4px 0 var(--ink, #161616); }
+  .lead-error {
+    font-size: 0.82rem;
+    color: var(--error, #E64A4A);
+    min-height: 18px;
+    margin: 2px 0 6px;
+  }
+  .lead-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  .lead-fine {
+    font-size: 0.74rem;
+    color: var(--ink-4, #8C8C8C);
+    text-align: center;
+    margin: 14px 0 0;
+  }
+  @keyframes leadFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes leadModalIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
 <script src="script.js"></script>
 <script>
-  document.getElementById('launch-demo').addEventListener('click', function () {
-    localStorage.setItem('os_authed', '1');
-    localStorage.setItem('os_mode', 'demo');
-    localStorage.removeItem('os_admin_bypass');
-    window.location.href = 'os/index.html';
-  });
+  // ============ Demo entry · lead capture ============
+  // /demo/ is a fully isolated read-only workspace — no localStorage flags,
+  // no auth, no shared state with the real /os/ workspace.
+  // Before entering, we ask first-time visitors for name + email so we can
+  // follow up. Repeat visits skip the modal.
+  (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+    const DEMO_URL          = 'demo/index.html';
+    const SEEN_KEY          = 'demo_lead_seen';
+
+    function loadSDK() {
+      return new Promise(function(resolve, reject) {
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL; s.onload = resolve; s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+    let SB = null;
+    loadSDK()
+      .then(function () { SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); })
+      .catch(function () { /* fallback: skip save, still let them through */ });
+
+    const launchBtn = document.getElementById('launch-demo');
+    const modal     = document.getElementById('lead-modal');
+    const form      = document.getElementById('lead-form');
+    const errorEl   = document.getElementById('lead-error');
+    const closeBtn  = modal.querySelector('.lead-modal-close');
+
+    function openModal() {
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () {
+        const first = modal.querySelector('input');
+        if (first) first.focus();
+      }, 60);
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    function goToDemo() { window.location.href = DEMO_URL; }
+
+    if (launchBtn) {
+      launchBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Repeat visitors who already submitted skip the modal.
+        if (localStorage.getItem(SEEN_KEY) === '1') { goToDemo(); return; }
+        openModal();
+      });
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name  = form.name.value.trim();
+      const email = form.email.value.trim();
+      errorEl.textContent = '';
+      if (!name || !email) { errorEl.textContent = 'Both fields, please.'; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorEl.textContent = "That email looks off — double-check it?";
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'One sec…';
+
+      let savedOk = false;
+      if (SB) {
+        try {
+          const { error } = await SB.from('demo_leads').insert({
+            name: name,
+            email: email,
+            source: 'demo-launch',
+            meta: { referrer: document.referrer || null, ua: navigator.userAgent }
+          });
+          if (!error) savedOk = true;
+          else console.warn('[demo lead] insert failed:', error);
+        } catch (err) { console.warn('[demo lead]', err); }
+      }
+
+      // Set seen flag and redirect — don't block on save failure.
+      try {
+        localStorage.setItem(SEEN_KEY, '1');
+        localStorage.setItem('demo_lead_info', JSON.stringify({ name: name, email: email, at: Date.now() }));
+      } catch (_) {}
+
+      goToDemo();
+    });
+  })();
 </script>
 </body>
 </html>

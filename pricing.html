@@ -26,6 +26,7 @@
       <li><a href="pricing.html" class="active">Pricing</a></li>
       <li><a href="demo.html">Try Demo</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="os/login.html">Studio Sign-in</a></li>
       <li class="mobile-only"><a href="contact.html?topic=brand" class="btn btn-primary nav-cta">Book a Campaign</a></li>
     </ul>
     <a href="contact.html?topic=brand" class="btn btn-primary nav-cta desktop-cta">Book a Campaign</a>
@@ -416,8 +417,12 @@
 
 <script src="script.js"></script>
 <script>
-  // ============ Signup → Pricing handoff ============
+  // ============ Signup → Pricing handoff (Supabase-aware) ============
   (function () {
+    const SUPABASE_URL      = 'https://bjfvmclkpmqarvnrlttk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZnZtY2xrcG1xYXJ2bnJsdHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyODgyOTUsImV4cCI6MjA5Mzg2NDI5NX0.NLYvFG97OZCm8nASXWaywD7uNzSJ_-G7CxVwWKbQsUY';
+    const SDK_URL           = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45';
+
     const params  = new URLSearchParams(location.search);
     const fromSig = params.get('from') === 'signup';
     let pending = null;
@@ -425,7 +430,6 @@
     catch (_) {}
 
     if (fromSig && pending) {
-      // Welcome banner above hero
       const banner = document.createElement('div');
       banner.className = 'signup-welcome';
       banner.innerHTML =
@@ -440,26 +444,97 @@
       else document.body.insertBefore(banner, document.body.firstChild);
     }
 
-    // Wire plan CTAs to OS handoff when the user came from signup
-    function activateWorkspace(planName) {
-      let info = pending;
-      // Allow direct visitors to also pick a plan if they're already signed up
-      if (!info) {
-        try { info = JSON.parse(localStorage.getItem('os_workspace') || 'null'); }
-        catch (_) {}
+    function loadSupabase() {
+      return new Promise(function (resolve, reject) {
+        if (window.supabase) return resolve();
+        const s = document.createElement('script');
+        s.src = SDK_URL;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('SDK load failed')); };
+        document.head.appendChild(s);
+      });
+    }
+
+    let SB = null;
+    if (fromSig) {
+      loadSupabase()
+        .then(function () {
+          SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+            auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
+          });
+          window.SBClient = SB;
+        })
+        .catch(function (err) { console.warn('[pricing] Supabase load failed:', err); });
+    }
+
+    async function activateWorkspace(planName) {
+      // Capture studio name from pending signup or existing workspace cache
+      let studioName = pending && pending.studio;
+      if (!studioName) {
+        try {
+          const ws = JSON.parse(localStorage.getItem('os_workspace') || 'null');
+          if (ws) studioName = ws.studio;
+        } catch (_) {}
       }
-      if (!info) {
-        // No signup yet — send them to signup first
+
+      if (SB) {
+        // Real flow: must be authenticated (signup completed)
+        const sessionRes = await SB.auth.getSession();
+        const session = sessionRes && sessionRes.data && sessionRes.data.session;
+        if (!session) {
+          alert('Please confirm your email and sign in, then pick a plan.');
+          location.href = 'os/login.html';
+          return;
+        }
+
+        // Resolve studio name
+        const meta = session.user.user_metadata || {};
+        if (!studioName) studioName = meta.studio || (meta.name || 'Your') + "'s Studio";
+
+        // Check if a studio already exists for this owner (resume case)
+        const existing = await SB.from('studios')
+          .select('id')
+          .eq('owner_id', session.user.id)
+          .limit(1)
+          .maybeSingle();
+
+        if (existing.data) {
+          // Update plan on existing studio
+          const upd = await SB.from('studios')
+            .update({ plan: planName })
+            .eq('id', existing.data.id);
+          if (upd.error) {
+            alert('Could not update plan: ' + upd.error.message);
+            return;
+          }
+        } else {
+          const ins = await SB.from('studios')
+            .insert({ name: studioName, plan: planName, owner_id: session.user.id });
+          if (ins.error) {
+            alert('Could not create studio: ' + ins.error.message);
+            return;
+          }
+        }
+
+        localStorage.setItem('os_authed', '1');
+        localStorage.setItem('os_mode', 'workspace');
+        localStorage.removeItem('os_admin_bypass');
+        localStorage.removeItem('os_pending_signup');
+        location.href = 'os/index.html';
+        return;
+      }
+
+      // Fallback: Supabase didn't load. Use legacy localStorage path.
+      if (!studioName) {
         location.href = 'os/signup.html';
         return;
       }
-      const ws = {
-        studio: info.studio,
-        name: info.name,
-        email: info.email,
+      localStorage.setItem('os_workspace', JSON.stringify({
+        studio: studioName,
+        name: pending ? pending.name : 'You',
+        email: pending ? pending.email : '',
         plan: planName
-      };
-      localStorage.setItem('os_workspace', JSON.stringify(ws));
+      }));
       localStorage.setItem('os_authed', '1');
       localStorage.setItem('os_mode', 'workspace');
       localStorage.removeItem('os_admin_bypass');
@@ -471,10 +546,10 @@
       document.querySelectorAll('.plan-cta, .mini-cta').forEach(function (cta) {
         cta.addEventListener('click', function (e) {
           e.preventDefault();
-          const plan = (cta.closest('.plan') || cta.closest('tr'));
+          const planEl = (cta.closest('.plan') || cta.closest('tr'));
           let planName = 'Studio';
-          if (plan) {
-            const h = plan.querySelector('h3') || plan.querySelector('.plan-name') || plan.querySelector('td:first-child');
+          if (planEl) {
+            const h = planEl.querySelector('h3') || planEl.querySelector('.plan-name') || planEl.querySelector('td:first-child');
             if (h) planName = h.textContent.trim();
           }
           activateWorkspace(planName);
